@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1e1f1c;
+  color: #f8f8f2;
+  font-family: monospace;
+}
+
+.r-container {
+  background-color: #272822;
+  width: 60%;
+  /* margin-top: 32px; */
+  margin-bottom: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: auto;
+  margin-top: 80px;
+  padding: 70px;
+  flex-direction: column;
+}
+
+header .r-headercontent {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+header .r-headercontent .r-aboutphoto {
+  flex: 30%;
+  /* margin-right: 20px; */
+}
+
+header .r-headercontent .r-abouttext {
+  flex: 70%;
+}
+
+header .r-headercontent .r-aboutphoto img {
+  width: 90%;
+  margin-right: 10px;
+}
+
+header .r-headercontent .r-abouttext {
+  padding-right: 10px;
+}
+
+header .r-headercontent .r-abouttext .r-abouttext1 {
+  margin-bottom: 20px;
+}
+
+header .r-headercontent .r-abouttext .r-abouttext1 h3 {
+  font-size: 1.7em;
+  font-weight: 800;
+}
+
+header .r-headercontent .r-abouttext .r-abouttext1 p {
+  color: #cfcfc2;
+  font-size: 1.45em;
+}
+
+header .r-headercontent .r-abouttext .r-abouttext1 p a {
+  color: #a6e22e;
+}
+
+header .r-headercontent .r-abouttext .r-abouttext2 p {
+  color: #cfcfc2;
+  font-size: 1.45em;
+}
+
+header .r-topstroke {
+  font-family: monospace;
+  color: #cfcfc2;
+  margin-bottom: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+main .r-latest {
+  font-size: 1.4em;
+  margin-top: 10px;
+  float: left;
+  margin-left: 0;
+}
+
+main .r-maincontent1 {
+  display: flex;
+  width: 100%;
+  padding-top: 20px;
+}
+
+main .r-maincontent1 .r-mc1photo {
+  flex: 30%;
+}
+
+main .r-maincontent1 .r-mc1text {
+  flex: 70%;
+}
+
+main .r-maincontent1 .r-mc1photo a img {
+  width: 90%;
+  margin-right: 10px;
+}
+
+main .r-maincontent1 .r-mc1text .r-mc1text1 h3 {
+  font-size: 1.7em;
+  font-weight: 800;
+}
+
+main .r-maincontent1 .r-mc1text .r-mc1text1 p {
+  color: #cfcfc2;
+  font-size: 1.33em;
+}
+
+main .r-maincontent1 .r-mc1text .r-mc1text2 {
+  padding-top: 40px;
+}
+
+main .r-maincontent1 .r-mc1text .r-mc1text2 p {
+  font-size: 1.1em;
+  color: #66665e;
+}
+
+main .r-maincontent2 {
+  display: flex;
+  width: 100%;
+  padding-top: 20px;
+}
+
+main .r-maincontent2 .r-mc2photo {
+  flex: 30%;
+}
+
+main .r-maincontent2 .r-mc2text {
+  flex: 70%;
+}
+
+main .r-maincontent2 .r-mc2photo a img {
+  width: 90%;
+  margin-right: 10px;
+}
+
+main .r-maincontent2 .r-mc2text .r-mc2text1 h3 {
+  font-size: 1.7em;
+  font-weight: 800;
+}
+
+main .r-maincontent2 .r-mc2text .r-mc2text1 p {
+  color: #cfcfc2;
+  font-size: 1.33em;
+}
+
+main .r-maincontent2 .r-mc2text .r-mc2text2 {
+  padding-top: 20px;
+}
+
+main .r-maincontent2 .r-mc2text .r-mc2text2 p {
+  font-size: 1.1em;
+  color: #66665e;
+}
+
+main .r-maincontent3 {
+  display: flex;
+  width: 100%;
+  padding-top: 20px;
+}
+
+main .r-maincontent3 .r-mc3photo {
+  flex: 30%;
+}
+
+main .r-maincontent3 .r-mc3text {
+  flex: 70%;
+}
+
+main .r-maincontent3 .r-mc3photo a img {
+  width: 90%;
+  margin-right: 10px;
+}
+
+main .r-maincontent3 .r-mc3text .r-mc3text1 h3 {
+  font-size: 1.7em;
+  font-weight: 800;
+}
+
+main .r-maincontent3 .r-mc3text .r-mc3text1 p {
+  color: #cfcfc2;
+  font-size: 1.33em;
+}
+
+main .r-maincontent3 .r-mc3text .r-mc3text2 {
+  padding-top: 40px;
+}
+
+main .r-maincontent3 .r-mc3text .r-mc3text2 p {
+  font-size: 1.1em;
+  color: #66665e;
+}
