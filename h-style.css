@@ -1,0 +1,193 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: currentColor;
+
+}
+
+:root{
+    --secondary-color: #cfcfc2;
+    --text-color:  #f8f8f2;
+    --bg-color: #1e1f1c;
+    --unvisited-link:#a6e22e;
+    --hover: #4e94ce;
+    --code-color:#ffa500;
+    --secondary-code:#88846f;
+
+}
+
+.fix-background, .favourite-background{
+    background-color:var(--bg-color);
+    padding-bottom: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fix-container, .favourite-container{
+    background-color:  #272822;
+    color: var(--text-color);
+    width: 57%;
+    margin-top: 4.3rem;
+    margin-left: 1rem;
+    padding-bottom: 80%;
+    font-family: 'Fira Code', monospace;
+}
+ 
+.fix-container img, .favourite-container img {
+   width: 100%;
+   background-size:contain ;
+ } 
+
+
+ .fix-container .h-content, .favourite-container .content{
+    padding: 2.5rem 4.5rem;
+ }
+
+ .fix-container header, .favourite-container header{
+     display: flex;
+     justify-content: space-between;
+ }
+
+ .fix-container header .left h1, .favourite-container header .left h1{
+    font-size: 1.25rem;
+    font-weight: 700;
+    max-width: 40ch;
+ }
+
+ .fix-container header .left p, .favourite-container header .left p{
+    font-weight: 500;
+    max-width: 44ch;
+    line-height: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+ }
+
+ .fix-container header .right p, .favourite-container header .right p{
+    font-size: .8125rem;
+    color: var(--secondary-color);
+    line-height: 1.5rem;
+    text-align: end;
+ }
+
+ .favourite-container article p, .fix-container article p{
+    margin-top: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    letter-spacing: .05em; 
+    font-size: 1.1em
+   
+ }
+
+ .favourite-container a, .fix-container a{
+    color: var(--unvisited-link);
+    text-decoration: underline;
+ }
+
+ .favourite-container a:hover, .fix-container a:hover{
+    color:var(--hover);
+ }
+
+ .h-footer{
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+ }
+
+ .h-footer .links ul{
+    display: flex;
+    gap: 1rem;
+    list-style-type: none;
+ }
+
+ .h-footer .colour{
+    color: var(--unvisited-link);
+ }
+
+
+ .fix-container article pre .language-php{
+   display: flex;
+   flex-flow: row wrap;
+  
+ }
+
+ .fix-container article .code-block{
+   background-color: var(--bg-color);
+   width: 123%;
+   margin-top: 1rem;
+   margin-left: -4.5rem;
+   margin-bottom: 1rem;
+   padding: 1rem;
+  
+ }
+
+ .fix-container hr{
+   color: var(--secondary-color)
+ }
+
+ .fix-container hr::before{
+   content: "//";
+   padding-right: .4rem;
+ }
+
+ .fix-container hr::after{
+   content: "--------";
+ }
+
+ .fix-container article pre .first-code::before{
+   content: "#";
+   padding-right: 1rem;
+   padding-left: .7rem;
+   color: var(--secondary-code);
+   font-size: 1.1rem;
+   
+ }
+ .fix-container article pre  .function{
+   color: #4e94ce;
+ }
+ .fix-container article pre  .string{
+   color: var(--code-color);
+ }
+ .fix-container article pre  .punctuation{
+   color: var(--text-color);
+ }
+ .fix-container article pre  .variable{
+   color: brown;
+ }
+ .fix-container article pre  .keyword{
+   color: slategray;
+ }
+
+ .fix-container article code{
+   color: var(--code-color);
+   font-size: 1.1rem;
+ }
+
+ .fix-container article blockquote {
+   /* color: var(--secondary-color);
+   background-color: var(--bg-color);
+   width: 123%;
+   margin-top: 1rem;
+   margin-left: -4.5rem;
+   margin-bottom: 1rem;
+   padding: 1rem */
+
+   margin-top: 1.5rem;
+   margin-bottom: 1.5rem;
+   display: flex;
+   overflow: hidden;
+   color: var(--secondary-code);
+   overflow-x: hidden;
+   line-height: 1.5rem;
+   font-size: 1.1rem;
+ }
+
+ .fix-container article blockquote::before{
+   content: "> > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > >";
+    width: 1ch;
+    height:1.5rem;
+    margin-right: 2ch;
+    color: var(--secondary-code);
+ }

@@ -6,20 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link id="favicon" href="https://dodov.dev/media/site/d0298ef0fd-1614418428/favicon-monokai.png" rel="icon" type="image/png">
     <title>Fixing SiteGround Dynamic Cache Issues</title>
+    <link rel="stylesheet" href="h-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="fix-background">
+    <div class="fix-container">
    <nav>
     <a href="index.html">home</a>
     <a href="blog.html">blog</a>
     <a href="#"></a>
     <a href="#"></a>
     <a href="#"></a>
-    <a href="favorite.html"class="fav isactive"> fixing-siteground-dynamic-cache-issues</a>
+    <a href="fix.html"class="fix isactive"> fixing-siteground-dynamic-cache-issues</a>
     <a href="#"></a>
     <a href="project.html">projects</a>
    </nav>
 
-   <section class="s-content">
+   <section class="h-content">
     <main>
         <header>
             <div class="left">
@@ -42,16 +48,17 @@
             </div>
         </header>
 
-        <img class="w-auto h-lines my-line object-left md:object-center object-contain js-lightbox" alt="The word 'SiteGround', surrounded by random characters." height="1440" src="https://dodov.dev/media/pages/blog/fixing-siteground-dynamic-cache-issues/adf04a2e0b-1642745720/siteground-random-characters-cover.png" srcset="https://dodov.dev/media/pages/blog/fixing-siteground-dynamic-cache-issues/adf04a2e0b-1642745720/siteground-random-characters-cover-640x.png 640w, https://dodov.dev/media/pages/blog/fixing-siteground-dynamic-cache-issues/adf04a2e0b-1642745720/siteground-random-characters-cover-896x.png 896w, https://dodov.dev/media/pages/blog/fixing-siteground-dynamic-cache-issues/adf04a2e0b-1642745720/siteground-random-characters-cover-1280x.png 1280w, https://dodov.dev/media/pages/blog/fixing-siteground-dynamic-cache-issues/adf04a2e0b-1642745720/siteground-random-characters-cover.png 2560w" width="2560" sizes="(min-width: 600px) 640px, 298px" style="--lines-mobile: 8; --lines-desktop: 15;" data-id="cover" data-ob-width="2560" data-ob-height="1440">
+        <img alt="The word 'SiteGround', surrounded by random characters." src="./images/siteground.png">
 
         <article>
           <p>
             If your website is hosted on SiteGround and you have strange issues, such as clicking on a button and nothing happening, it could be a cache issue. By default, SiteGround caches all requests, as they've said in 
-             <a href="https://www.siteground.com/kb/siteground-dynamic-caching-configuration/" rel="noopener noreferrer nofollow" target="_blank">their help center article</a> :
+             <a href="https://www.siteground.com/kb/siteground-dynamic-caching-configuration/" rel="noopener noreferrer nofollow" target="_blank">their help center article</a>:
           </p>
+
           <blockquote>
             <div class="wrapper">
-                <p>Our Dynamic caching is a full-page caching mechanism powered by NGINX that's enabled and running by default on all SiteGround servers.</p>
+                Our Dynamic caching is a full-page caching mechanism powered by NGINX that's enabled and running by default on all SiteGround servers.
             </div>
           </blockquote>
 
@@ -65,13 +72,13 @@
 
           <p>
             Luckily, SiteGround respects
-             <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control" rel="noopener noreferrer nofollow" target="_blank"> <code>Cache-Control</code> headers </a>
+             <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control" rel="noopener noreferrer nofollow" target="_blank"> <code>Cache-Control</code> headers</a>
              that your server sends. You can turn off the cache entirely by adding the following in your main <code>index.php</code> file:
           </p>
 
           <div class="code-block">
             <pre class="language-php">
-               <code class="language-php"  >
+               <code class="language-php first-code" >
                 <span class="token function">header</span>
                 <span class="token punctuation">(</span>
                 <span class="token string single-quoted-string">'Cache-Control: no-cache'</span>
@@ -83,7 +90,7 @@
 
           <p>
             Alternatively, in case of using Kirby, you could disable it for just the panel by 
-           <a href="https://regex101.com/r/tM1OZT" rel="noopener noreferrer nofollow" target="_blank">matching the request path with regex</a> :
+           <a href="https://regex101.com/r/tM1OZT" rel="noopener noreferrer nofollow" target="_blank">matching the request path with regex</a>:
           </p>
 
           <div class="code-block">
@@ -157,7 +164,7 @@
 
         <hr> 
         
-        <footer>
+        <footer class="h-footer">
             <div class="links">
                 <ul>
                     <li>
@@ -185,7 +192,7 @@
             <div class="themes">
                 <span class="all">
                    <span>Monokai</span>
-                   <span>↓</span>
+                   <span class="colour">↓</span>
 
                    <select name="themes" id="themes">
                     <option value="dark-plus"> Dark+ </option>slot
@@ -200,4 +207,12 @@
         </footer>
     </main>
    </section>
+</div>
+</div>
 </body>
+
+
+
+
+
+<!--  srcset="https://dodov.dev/media/pages/blog/fixing-siteground-dynamic-cache-issues/adf04a2e0b-1642745720/siteground-random-characters-cover-640x.png 640w, https://dodov.dev/media/pages/blog/fixing-siteground-dynamic-cache-issues/adf04a2e0b-1642745720/siteground-random-characters-cover-896x.png 896w, https://dodov.dev/media/pages/blog/fixing-siteground-dynamic-cache-issues/adf04a2e0b-1642745720/siteground-random-characters-cover-1280x.png 1280w, https://dodov.dev/media/pages/blog/fixing-siteground-dynamic-cache-issues/adf04a2e0b-1642745720/siteground-random-characters-cover.png 2560w" width="2560" sizes="(min-width: 600px) 640px, 298px" style="--lines-mobile: 8; --lines-desktop: 15;" data-id="cover" data-ob-width="2560" data-ob-height="1440" -->
