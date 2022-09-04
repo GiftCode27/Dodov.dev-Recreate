@@ -7,12 +7,15 @@
       <link id="favicon" href="https://dodov.dev/media/site/d0298ef0fd-1614418428/favicon-monokai.png" rel="icon" type="image/png">
       <title>Projects</title>
       <link rel="stylesheet" href="cstyles.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"/>
    </head>
    <body>
         <div class="c-container">
            <header>
                 <div class="c-focus">
-                     <h1>projects</h1>
+                     <h1>Projects</h1>
                 </div>
                 
                 <div class="c-focus2">
@@ -35,7 +38,7 @@
                                     </p>
                             </div>
                             
-                    </div>
+                   </div>
 
                        <div class="c-mainpoint">
                            <div class="c-mp1photo">
@@ -85,17 +88,67 @@
                                         reusable modules.
                                    </p>
                                    <p class="c-links">
-                                      <a href="https://oblik.dev/"></a>
+                                      <a href="https://oblik.dev/" rel="noopener noreferrer" target="_blank"> oblik.dev</a>
                                    </p>
                             </div>
                          </div>
                          
                         <div class="c-topstroke">
                           //
-                          --------------------------------------------------------------------------------------------------------
+                          - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
                         </div>
+                        <footer>
+                          <div class="links">
+                              <ul>
+
+                                  <li>
+                                     <a class="social-link" href="https://github.io/yandodov" rel="noopener noreferrer" target="_blank">Github</a>
+                                  </li>
+
+                                  <li>
+                                      <a class="social-link" href="https://twitter.com/yandodov" rel="noopener noreferrer" target="_blank">Twitter</a>
+            
+                                  </li>
+              
+                                  <li>
+                                      <a class="social-link" href="https://www.linkedin.com/in/yandodov/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+                  
+                                  </li>
+              
+                                  <li>
+                                      <a class="social-link" href="https://www.instagram.com/yandodov/" rel="noopener noreferrer" target="_blank">Instagram</a>
+                                      
+                                  </li>
+              
+                                 
+                              </ul>
+                          </div>
+                          <div class="modes">
+                                  <select name="theme" id="theme">  
+                                      <option value="dark-plus"> Dark+ </option>
+                                      <option value="light-plus"> Light+ </option>
+                                      <option value="monokai"> Monokai </option>
+                                      <option value="github-dark"> GitHub Dark </option>
+                                      <option value="github-light"> GitHub Light </option>
+                                      <option value="solarized-light"> Solarized Light </option>
+                                 </select>
+                              
+                          </div>
+                      </footer>
+                  
+                 </section>
+              
+              
                 
             </main>
        </div>
+       <script>
+        const setTheme = theme => document.documentElement.className = theme;
+
+        document.getElementById('theme').addEventListener('change', function() {
+        setTheme(this.value);
+        });
+
+       </script>
     </body>
 </html>
