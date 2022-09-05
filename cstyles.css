@@ -276,7 +276,7 @@ body {
     align-items: center;
     margin: auto;
     margin-top: 80px;
-    padding: 70px;
+    padding: 78px;
     
   }
 
@@ -412,3 +412,32 @@ body {
   .up {
     list-style: none;
   }
+
+  .modes span{
+    font-size: 16px;
+    font-family: "Fira Code", monospace;
+    color: var(--color-body-text);
+    width: 88px;
+    height: 66px;
+  }
+
+  #theme a {
+    color: var(--color-accent-1);
+    text-decoration: underline;
+
+  }
+
+  #theme a:hover {
+    color:var(--color-accent-2);
+
+  }
+
+
+  .c-container a{
+    color: var(--color-accent-1);
+    text-decoration: underline;
+ }
+
+ .c-container a:hover{
+    color:var(--color-accent-2);
+ }
