@@ -371,10 +371,7 @@ body {
   }
   .links a{
     display:flex;
-    /* justify-items:flex-start; */
     color: var(--color-accent-1);
-    /* margin: auto; */
-    /* display: inline-block; */
     
   }
 
@@ -384,10 +381,8 @@ body {
   }
 
   footer, .links ul{
-    /* text-align:center; */
     justify-content:space-between;
     display: flex;
-    /* text-align: center; */
  }
 
   
