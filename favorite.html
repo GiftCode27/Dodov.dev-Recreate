@@ -15,14 +15,14 @@
     <div class="favourite-background">
         <div class="favourite-container">
    <nav>
-    <a href="#">home</a>
-    <a href="#">blog</a>
+    <a href="index.html">home</a>
+    <a href="blog.html">blog</a>
     <a href="#"></a>
     <a href="#"></a>
     <a href="#"></a>
     <a href="#"></a>
-    <a href="#" class="fav isactive">my-favorite-number</a>
-    <a href="#">projects</a>
+    <a href="favorite.html"  class="fav isactive">my-favorite-number</a>
+    <a href="projects.html">projects</a>
    </nav>
 
    <section class="content">
@@ -104,7 +104,7 @@
                    <span>Monokai</span>
                   <span class="colour">↓</span>
 
-                   <select name="themes" id="themes">
+                   <select name="theme" id="theme">
                     <option value="dark-plus"> Dark+ </option>slot
                     <option value="light-plus"> Light+ </option>slot
                     <option value="monokai"> Monokai </option>slot
@@ -119,6 +119,15 @@
    </section>
    </div>
    </div>
+
+   <script>
+    const setTheme = theme => document.documentElement.className = theme;
+
+    document.getElementById('theme').addEventListener('change', function() {
+    setTheme(this.value);
+    });
+
+   </script>
 </body>
 </html>
 
@@ -130,5 +139,3 @@
 
 
 
-<!--https://dodov.dev/media/pages/blog/my-favorite-number/f3da492228-1639463741/binary-24.png
-     srcset="https://dodov.dev/media/pages/blog/my-favorite-number/f3da492228-1639463741/binary-24-640x.png 640w, https://dodov.dev/media/pages/blog/my-favorite-number/f3da492228-1639463741/binary-24-896x.png 896w, https://dodov.dev/media/pages/blog/my-favorite-number/f3da492228-1639463741/binary-24-1280x.png 1280w, https://dodov.dev/media/pages/blog/my-favorite-number/f3da492228-1639463741/binary-24.png 2560w" width="2560" sizes="(min-width: 600px) 640px, 298px" style="--lines-mobile: 8; --lines-desktop: 15;" data-id="cover" data-ob-width="2560" data-ob-height="1440" -->
