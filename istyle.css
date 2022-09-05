@@ -1,0 +1,35 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1e1e1e;
+  color: #f8f8f2;
+  font-family: monospace;
+  
+}
+
+.i-container {
+  margin: 0 auto;
+  background-color: #272822;
+  width: 60%;
+  margin-top: 80px;
+  justify-content: center;
+  align-items: center;
+  padding: 70px;
+  
+}
+
+.i-text1, .i-text2{
+ flex: 70%;
+ padding-right: 10px;
+ color: #cfcfc2;
+ font-size: 1.45em;
+}
+
+.i-sub-container{
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
