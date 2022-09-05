@@ -8,21 +8,28 @@ body {
   background-color: #1e1f1c;
   color: #f8f8f2;
   font-family: monospace;
+  /* height: 100vh; */
 }
 
 .r-container {
   background-color: #272822;
+  /* background-position: ;
+  background-repeat: inherit; */
   width: 60%;
   /* margin-top: 32px; */
   margin-bottom: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /* height: 100vh; */
   margin: auto;
   margin-top: 80px;
   padding: 70px;
   flex-direction: column;
+}
+
+.r-hidenblog {
+  display: none;
 }
 
 header .r-headercontent {
@@ -71,7 +78,7 @@ header .r-headercontent .r-abouttext .r-abouttext2 p {
   font-size: 1.45em;
 }
 
-header .r-topstroke {
+header .r-firststroke {
   font-family: monospace;
   color: #cfcfc2;
   margin-bottom: 10px;
@@ -83,7 +90,7 @@ main {
 }
 
 main .r-latest {
-  font-size: 1.4em;
+  font-size: 1.5em;
   margin-top: 10px;
   float: left;
   margin-left: 0;
@@ -201,4 +208,169 @@ main .r-maincontent3 .r-mc3text .r-mc3text2 {
 main .r-maincontent3 .r-mc3text .r-mc3text2 p {
   font-size: 1.1em;
   color: #66665e;
+}
+
+main .r-readmore {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+main .r-readmore h3 a {
+  color: #cfcfc2;
+  text-decoration: none;
+  font-size: 1.3em;
+}
+
+main .r-readmore h3 a span {
+  color: #a6e22e;
+}
+
+main .r-secondstroke {
+  font-family: monospace;
+  color: #cfcfc2;
+  margin-bottom: 10px;
+}
+
+main .r-projects {
+  font-size: 1.5em;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  float: left;
+  margin-left: 0;
+}
+
+main .r-projcontent1 {
+  display: flex;
+  width: 100%;
+  padding-top: 20px;
+}
+
+main .r-projcontent1 .r-pc1photo {
+  flex: 18%;
+}
+
+main .r-projcontent1 .r-pc1text {
+  flex: 82%;
+}
+
+main .r-projcontent1 .r-pc1photo img {
+  width: 80%;
+}
+
+main .r-projcontent1 .r-pc1text .r-pc1text1 h3 {
+  font-size: 1.7em;
+  font-weight: 800;
+}
+
+main .r-projcontent1 .r-pc1text .r-pc1text1 p {
+  /* color: #cfcfc2; */
+  font-size: 1.65em;
+  font-weight: 500;
+}
+
+main .r-projcontent1 .r-pc1text .r-pc1text2 {
+  margin-top: 10px;
+}
+
+main .r-projcontent1 .r-pc1text .r-pc1text2 a {
+  color: #a6e22e;
+  font-size: 1.6em;
+}
+
+main .r-projcontent2 {
+  display: flex;
+  width: 100%;
+  padding-top: 20px;
+}
+
+main .r-projcontent2 {
+  display: flex;
+  width: 100%;
+  padding-top: 20px;
+}
+
+main .r-projcontent2 .r-pc2photo {
+  flex: 18%;
+}
+
+main .r-projcontent2 .r-pc2text {
+  flex: 82%;
+}
+
+main .r-projcontent2 .r-pc2photo img {
+  width: 80%;
+}
+
+main .r-projcontent2 .r-pc2text .r-pc2text1 h3 {
+  font-size: 1.7em;
+  font-weight: 800;
+}
+
+main .r-projcontent2 .r-pc2text .r-pc2text1 p {
+  /* color: #cfcfc2; */
+  font-size: 1.65em;
+  font-weight: 500;
+}
+
+main .r-projcontent2 .r-pc2text .r-pc2text2 {
+  margin-top: 10px;
+}
+
+main .r-projcontent2 .r-pc2text .r-pc2text2 a {
+  color: #a6e22e;
+  font-size: 1.6em;
+}
+
+main .r-viewmore {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+main .r-viewmore h3 a {
+  color: #cfcfc2;
+  text-decoration: none;
+  font-size: 1.3em;
+}
+
+main .r-viewmore h3 a span {
+  color: #a6e22e;
+}
+
+/* .topnav .menu {
+  width: 60%;
+  border-left: 10px;
+  margin-top: 0;
+}
+
+.topnav .menu ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 30px;
+  position: relative;
+}
+
+.topnav .menu ul li a {
+  text-decoration: none;
+  color: #fff;
+} */
+
+footer .r-footmenu {
+  /* width: 60%; */
+  float: left;
+  margin-left: 0;
+}
+
+footer .r-footmenu ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 10px;
+  position: relative;
+  color: #a6e22e;
+  font-size: 1, 9em;
+}
+
+footer .r-footmenu ul li a {
+  color: #a6e22e;
+  font-size: 1.6em;
+  text-decoration: underline;
 }
