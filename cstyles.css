@@ -11,6 +11,15 @@
     
   }
 
+  /* *, :before, :after {
+    --tw-shadow: 0 0 #0000;
+  }
+  * {
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  } */
+
   :root, 
      :root.monokai {
     --color-bg: #1e1f1c;
@@ -310,9 +319,12 @@ body {
   }
   
 .c-topstroke {
-    font-family:  "Fira Code", monospace;
+    /* font-family:  "Fira Code", monospace; */
     color: var(--color-secondary-text);
     margin-bottom: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    overflow-wrap: anywhere;
   }
   
   main {
@@ -332,6 +344,7 @@ body {
     width: 100%;
     padding-top: 20px;
     gap: 40px;
+    /* padding-bottom: 20px; */
   }
 
   .c-mp1photo img{
@@ -420,10 +433,19 @@ body {
   #theme a {
     color: var(--color-accent-1);
     text-decoration: underline;
+    font-family: "Fira Code", monospace;
+    font-size: 16px;
 
   }
 
-  #theme a:hover {
+  #theme {
+    font-family: "Fira Code", monospace;
+    font-size: 16px;
+    /* background-color: #2f363d; */
+    color: #dddddd;
+  }
+
+  #modes a:hover {
     color:var(--color-accent-2);
 
   }
@@ -437,3 +459,16 @@ body {
  .c-container a:hover{
     color:var(--color-accent-2);
  }
+
+.c-container #theme:hover {
+  color:var(--color-accent-2);
+  /* touch-action: cross-slide-x; */
+
+}
+
+
+.modes .colour {
+  color: var(--color-accent-1);
+  padding-right: 5px;
+  
+}
