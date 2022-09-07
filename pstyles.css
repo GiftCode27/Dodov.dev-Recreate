@@ -1,0 +1,565 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(30, 31, 28);
+    padding: 400px;
+    padding-top: 40px;
+}
+
+.container {
+    width: 800px;
+    height: 6000px;
+    align-items: center;
+    background-color: rgb(39, 40, 34);
+    margin-top: 20px
+}
+
+
+/* Framework-1 Starts */
+.framework-1 {
+    width: 80%;
+    height: 20px;
+    display: flex;
+    padding: 30px;
+    margin: 70px;
+    justify-content: space-between;
+}
+
+.framework-1 .col-1 {
+    width: 70%;
+    text-align: left;
+}
+
+.framework-1 .col-1 h1 {
+    font-family: monospace;
+    color: #f8f8f2;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: normal;
+}
+
+.framework-1 .col-1 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 500;
+    color: #cfcfc2;
+}
+
+.framework-1 .col-2 {
+    width: 20%;
+    text-align: right;
+}
+
+.framework-1 .col-2 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 500;
+    color: #cfcfc2;
+}
+
+
+/* Framework-2 Starts */
+.framework-2 {
+    width: 80%;
+    height: auto;
+}
+
+.framework-2 img {
+    width: 90%;
+    margin-left: 100px;
+}
+
+/* Framework-3 Starts */
+.framework-3 {
+    width: 85%;
+    height: 20px;
+    margin-top: 20px;
+}
+
+.framework-3 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+}
+
+.framework-3 a {
+    color: #a6e22e;
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Framework-4 Starts*/
+.framework-4 {
+    width: 85%;
+    height: 10px;
+    margin-top: 60px;
+}
+
+.framework-4 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+}
+
+.framework-4 a {
+    color: #a6e22e;
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    justify-content: space-between;
+}
+
+/* Framework-5 Starts */
+.framework-5 {
+    width: 85%;
+    height: 20px;
+    margin-top: 50px;
+}
+
+.framework-5 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+}
+
+.framework-5 a {
+    color: rgb(117, 154, 41);
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    justify-content: space-between;
+}
+
+/* Framework-6 Starts */
+.framework-6 {
+    width: 85%;
+    height: 20px;
+    margin-top: 70px;
+}
+
+.framework-6 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+}
+
+/* Framework-7 Starts */
+.framework-7 {
+    width: 85%;
+    height: 20px;
+    margin-top: 70px;
+}
+
+.framework-7 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+}
+
+/* Framework-8 Starts */
+.framework-8 {
+    width: 85%;
+    height: 100px;
+    margin-top: 130px;
+}
+
+.framework-8 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+}
+
+/* Framework-9 Starts */
+.framework-9 {
+    width: 85%;
+    height: 100px;
+    margin-top: 30px;
+}
+
+.framework-9 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+}
+
+/* Framework-10 Starts */
+.framework-10 {
+    width: 85%;
+    height: 100px;
+    margin-top: 30px;
+}
+
+.framework-10 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+}
+
+/* Framework-11 Starts */
+.framework-11 {
+    width: 85%;
+    height: 10px;
+    margin-top: 5px;
+}
+
+.framework-11 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+}
+
+.framework-11 a {
+    color: rgb(117, 154, 41);
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    justify-content: space-between;
+}
+
+/* Framework-12 Starts */
+.framework-12 {
+    width: 85%;
+    height: 100px;
+    margin-top: 120px;
+}
+
+.framework-12 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+}
+
+/* Framework-13 Starts */
+.framework-13 {
+    width: 85%;
+    height: 100px;
+    margin-top: 50px;
+}
+
+.framework-13 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+}
+
+/* Framework-14 Starts */
+.framework-14 {
+    width: 85%;
+    height: 100px;
+    margin-top: 30px;
+}
+
+.framework-14 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+}
+
+/* Framework-15 Starts */
+.framework-15 {
+    width: 85%;
+    height: 200px;
+    margin-top: 30px;
+}
+
+.framework-15 h1 {
+    font-family: monospace;
+    color: #f8f8f2;
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 100px;
+}
+
+.framework-15 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+/* Framework-16 Starts */
+.framework-16 {
+    width: 85%;
+    height: 180px;
+    margin-top: 30px;
+}
+
+.framework-16 h1 {
+    font-family: monospace;
+    color: #f8f8f2;
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 100px;
+}
+
+.framework-16 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+/* Framework-17 Starts */
+.framework-17 {
+    width: 85%;
+    height: 60px;
+    margin-top: 30px;
+}
+
+.framework-17 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+}
+
+/* Framework-18 Starts */
+.framework-18 {
+    width: 85%;
+    height: 190px;
+    margin-top: 40px;
+}
+
+.framework-18 h1 {
+    font-family: monospace;
+    color: #f8f8f2;
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 100px;
+}
+
+.framework-18 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+/* Framework-19 Starts */
+.framework-19 {
+    width: 85%;
+    height: 180px;
+    margin-top: 30px;
+}
+
+.framework-19 h1 {
+    font-family: monospace;
+    color: #f8f8f2;
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 100px;
+}
+
+.framework-19 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+.framework-19 .a-class {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(108, 106, 89);
+    margin-left: 100px;
+}
+
+.framework-19 a {
+    text-decoration: none;
+    color: rgb(149, 201, 44);
+    font-family: monospace;
+}
+
+/* Framework-20 Starts */
+.framework-20 {
+    width: 85%;
+    height: 130px;
+    margin-top: 30px;
+}
+
+.framework-20 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+}
+
+/* Framework-21 Starts */
+.framework-21 {
+    width: 85%;
+    height: 60px;
+    margin-top: 30px;
+}
+
+.framework-21 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+}
+
+/* Framework-22 Starts*/
+.framework-22 {
+    width: 85%;
+    height: 80px;
+    margin-top: 60px;
+}
+
+.framework-22 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+}
+
+.framework-22 a {
+    color: #a6e22e;
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    justify-content: space-between;
+}
+
+/* Framework-23 Starts */
+.framework-23 {
+    width: 85%;
+    height: 180px;
+    margin-top: 30px;
+}
+
+.framework-23 h1 {
+    font-family: monospace;
+    color: #f8f8f2;
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 100px;
+}
+
+.framework-23 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+.framework-23 a {
+    text-decoration: none;
+    color: rgb(149, 201, 44);
+    font-family: monospace;
+}
+
+/* Framework-24 Starts */
+.framework-24 {
+    width: 80%;
+    height: auto;
+}
+
+.framework-24 img {
+    width: 90%;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+/* Framework-25 Starts */
+.framework-25 {
+    width: 85%;
+    height: 70px;
+    margin-top: 30px;
+}
+
+.framework-25 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+}
+
+/* Framework-26 Starts */
+.framework-26 {
+    width: 85%;
+    height: 60px;
+    margin-top: 50px;
+}
+.framework-26 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+}
+.framework-26 p {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+/* Footer Starts */
+.footer .framework_footer {
+    float: left;
+    margin-left: 0;
+    display: flex;
+}
+.footer .framework_footer li{
+    list-style: none;
+    display: inline-block;
+    margin: 10px;
+    position: relative;
+    color: #a6e22e;
+    font-size: 1, 9em;
+}
+.footer .framework_footer {
+    color: #a6e22e;
+    font-size: 1.6em;
+    text-decoration: underline;
+}
