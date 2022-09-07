@@ -543,23 +543,3 @@ body {
     margin-left: 100px;
     margin-top: 20px;
 }
-
-/* Footer Starts */
-.footer .framework_footer {
-    float: left;
-    margin-left: 0;
-    display: flex;
-}
-.footer .framework_footer li{
-    list-style: none;
-    display: inline-block;
-    margin: 10px;
-    position: relative;
-    color: #a6e22e;
-    font-size: 1, 9em;
-}
-.footer .framework_footer {
-    color: #a6e22e;
-    font-size: 1.6em;
-    text-decoration: underline;
-}
