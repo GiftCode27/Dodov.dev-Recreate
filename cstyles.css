@@ -407,3 +407,18 @@ select {
   color: var(--color-accent-1);
   padding-right: 5px;
 }
+nav ul li {
+  list-style-type: none;
+  margin-right: 3em;
+}
+nav ul li a {
+  text-decoration: none;
+}
+.number {
+  margin-top: 3em;
+  color: var(--color-line-text);
+}
+.number:hover,
+.number:focus {
+  color: var(--color-line-text-hover);
+} 
