@@ -2,23 +2,50 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: currentColor;
 }
 
 body {
   background-color: var(--color-bg);
   color: var(--color-body-text);
   font-family: "Fira Code", monospace;
+  line-height: inherit;
+  overflow-x: hidden;
+  line-height: var(--line);
   
 }
 
-/* *, :before, :after {
+::-webkit-scrollbar {
+  display: none;
+}
+*::-webkit-scrollbar-corner, *::-webkit-scrollbar-button {
+  display: none;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--color-scrollbar-thumb);
+}
+*::-webkit-scrollbar-thumb:hover{
+  background: var(--color-scrollbar-thumb-hover);
+}
+*::-webkit-scrollbar-thumb:active{
+  background: var(--color-scrollbar-thumb-active);
+}
+::selection {
+  background-color: var(--color-selection);
+}
+
+
+*, :before, :after {
   --tw-shadow: 0 0 #0000;
 }
 * {
   -webkit-tap-highlight-color: rgba(255,255,255,0);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-} */
+}
+
 
 :root, 
    :root.monokai {
@@ -286,7 +313,7 @@ body {
   margin: auto;
   margin-top: 80px;
   padding: 78px;
-  padding-bottom: 720px;
+  padding-bottom: 43%;
   
 }
 
@@ -404,6 +431,8 @@ footer, .links ul{
   padding-left: 30px;
   border: none;
   outline: none;
+  width: fit-content;
+  background-color: var(--color-editor);
   
 }
 
@@ -443,6 +472,7 @@ select {
   font-size: 16px;
   /* background-color: #2f363d; */
   color: #dddddd;
+  position: relative;
 }
 
 #modes a:hover {
@@ -472,18 +502,76 @@ padding-right: 5px;
 
 }
 
-nav ul li {
-  list-style-type: none;
-  margin-right: 3em;
-}
-nav ul li a {
-  text-decoration: none;
-}
-.number {
-  margin-top: 3em;
-  color: var(--color-line-text);
-}
-.number:hover,
-.number:focus {
-  color: var(--color-line-text-hover);
-} 
+/* nav styling begins */
+
+.projects-container nav {
+  background-color: var(--color-bg);
+  font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, system-ui, Ubuntu, sans-serif;
+  }
+  .projects-container .navbar {
+    background-color: var(--color-tab);
+    display: flex;
+    user-select: none;
+    white-space: nowrap;
+    outline-offset: -1px;
+    width: fit-content;
+  }
+  .projects-container nav a {
+    font-family: -apple-system, BlinkMacSystemFont,  Segoe WPC, Segoe UI, system-ui,  Ubuntu, sans-serif;
+    color: var(--color-tab-text);
+    font-size: 1.166666rem;
+    text-decoration: none;
+    font-size: .8125em;
+    font-weight: 500;
+    text-align: start;
+    min-width: 7.5rem;
+    padding-top: .255em;
+    padding-bottom: .255em;
+    padding-right: 2.32em;
+    padding-left: .925em;
+    border-right: 1px solid var(--color-bg);
+    display: flex;
+    align-items: center;
+  }
+  
+  .projects-container nav a:hover {
+      color:var(--color-tab-text);
+  }
+  
+  .projects-container nav .isactive {
+      background-color:var(--color-editor);
+      font-style: italic;
+      color: var(--color-tab-text-active);
+      padding-right: .225em;
+      font-weight: 550;
+      font-size: .8125em;
+  }
+  .projects-container nav .isactive:hover {
+     color: var(--color-body-text-active);
+  }
+
+  .projects-container nav .isactive span {
+    font-size: 1.6em;
+    color: var(--color-tab-text-active);
+    font-weight: 350;
+    padding-top: 0;
+    padding-left: .4rem;
+    padding-right: .4rem;
+    display: block;
+    margin-left: .3rem;
+    
+  }
+
+  .projects-container nav .isactive span:hover {
+    background-color: var(--color-tab-icon-hover);
+    border-radius: 5px;
+        
+  }
+
+
+  .projects-container nav .isactive span:active, {
+    background-color: var(--color-tab-icon-active);
+    border-radius: 5px;
+        
+  }
+
