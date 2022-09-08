@@ -291,7 +291,7 @@ body {
 
 .fix-background, .favourite-background{
     background-color:var(--color-bg);
-    padding-bottom: 3%;
+    padding-bottom: .2%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -301,7 +301,7 @@ body {
     color: var(--color-body-text);
     width: 59.12%;
     margin-top: 4.3rem;
-    padding-bottom: 80%;
+    padding-bottom: 43%;
     font-family: 'Fira Code', monospace;
 }
  
@@ -312,7 +312,7 @@ body {
 
 
  .fix-container .h-content, .favourite-container .content{
-    padding: 2.5rem 4rem;
+    padding: 2rem 4.5rem;
  }
 
  .fix-container header, .favourite-container header{
@@ -330,7 +330,7 @@ body {
     font-weight: 500;
     max-width: 44ch;
     line-height: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: var(--color-secondary-text);
  }
 
@@ -350,7 +350,7 @@ body {
 
  .favourite-container a, .fix-container a{
     color: var(--color-accent-1);
-    text-decoration: underline;
+    text-decoration:underline;
     font-size: 1.0rem;
  }
 
@@ -369,6 +369,11 @@ body {
     gap: 1rem;
     list-style-type: none;
     flex-flow: row wrap;
+   
+ }
+ .h-footer .links ul li a{
+  font-size: 1.1rem;
+  line-height: 1.5rem;
  }
 
  .h-footer .colour{
@@ -536,65 +541,138 @@ color: var(--color-code-punctuation);
 
 
 
+
+   
+/* styling navbar */
+
+.favourite-container nav, .fix-container nav{
+  background-color: var(--color-bg);
+  font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, system-ui, Ubuntu, sans-serif;
+  }
+  .favourite-container .navbar, .fix-container .navbar {
+    background-color: var(--color-tab);
+    display: flex;
+    user-select: none;
+    white-space: nowrap;
+    outline-offset: -1px;
+    width: fit-content;
+  }
+  .favourite-container nav a, .fix-container nav a{
+    font-family: -apple-system, BlinkMacSystemFont,  Segoe WPC, Segoe UI, system-ui,  Ubuntu, sans-serif;
+    color: var(--color-tab-text);
+    font-size: 1.166666rem;
+    text-decoration: none;
+    font-size: .8125em;
+    font-weight: 500;
+    text-align: start;
+    min-width: 7.5rem;
+    padding-top: .255em;
+    padding-bottom: .255em;
+    padding-right: 2.32em;
+    padding-left: .925em;
+    border-right: 1px solid var(--color-bg);
+    display: flex;
+    align-items: center;
+  }
+  
+  .favourite-container nav a:hover, .fix-container nav a:hover{
+      color:var(--color-tab-text);
+  }
+  
+  .favourite-container nav .isactive, .fix-container nav .isactive{
+      background-color:var(--color-editor);
+      font-style: italic;
+      color: var(--color-tab-text-active);
+      padding-right: .225em;
+      font-weight: 550;
+      font-size: .8125em;
+  }
+  .favourite-container nav .isactive:hover, .fix-container nav .isactive:hover{
+     color: var(--color-body-text-active);
+  }
+
+  .favourite-container nav .isactive span, .fix-container nav .isactive span{
+    font-size: 1.6em;
+    color: var(--color-tab-text-active);
+    font-weight: 350;
+    padding-top: 0;
+    padding-left: .4rem;
+    padding-right: .4rem;
+    display: block;
+    margin-left: .3rem;
+    
+  }
+
+  .favourite-container nav .isactive span:hover, .fix-container nav .isactive span:hover{
+    background-color: var(--color-tab-icon-hover);
+    border-radius: 5px;
+        
+  }
+
+
+  .favourite-container nav .isactive span:active, .fix-container nav .isactive span:active{
+    background-color: var(--color-tab-icon-active);
+    border-radius: 5px;
+        
+  }
+
+
+
+
+
+
+
+
+
   @media(max-width:1024px){
     .fix-container, .favourite-container {
       width: 78%;
-    
   }
-  
   } 
 
   @media(max-width:1000px){
     .fix-container, .favourite-container {
       width: 80%;
-    
   }
   }
 
   @media(max-width:950px){
     .fix-container, .favourite-container {
-      width: 85%;
-    
+      width: 85%; 
   }
   }
 
   @media(max-width:900px){
     .fix-container, .favourite-container {
       width: 90%;
-    
   }
   }
 
   @media(max-width:850px){
     .fix-container, .favourite-container {
-      width: 93%;
-    
+      width: 93%;  
   }
   }
 
   @media(max-width:840px){
     .fix-container, .favourite-container {
-      width: 95%;
-    
+      width: 95%; 
   }
   }
   @media(max-width:830px){
     .fix-container, .favourite-container {
-      width: 97%;
-    
+      width: 97%; 
   }
   }
   @media(max-width:820px){
     .fix-container, .favourite-container {
       width: 98%;
-    
   }
   }
   
   @media(max-width:800px){
     .fix-container, .favourite-container {
       width: 100%;
-    
   }
   .fix-container article .code-block{
     width: 121%;
