@@ -267,6 +267,7 @@ main .r-projcontent1 .r-pc1photo {
 
 main .r-projcontent1 .r-pc1text {
   flex: 82%;
+  line-height: 1.3;
 }
 
 main .r-projcontent1 .r-pc1photo img {
@@ -280,7 +281,7 @@ main .r-projcontent1 .r-pc1text .r-pc1text1 h3 {
 
 main .r-projcontent1 .r-pc1text .r-pc1text1 p {
   /* color: #cfcfc2; */
-  font-size: 1.65em;
+  font-size: 19px;
   font-weight: 500;
 }
 
@@ -311,6 +312,7 @@ main .r-projcontent2 .r-pc2photo {
 
 main .r-projcontent2 .r-pc2text {
   flex: 82%;
+  line-height: 1.3;
 }
 
 main .r-projcontent2 .r-pc2photo img {
@@ -318,13 +320,13 @@ main .r-projcontent2 .r-pc2photo img {
 }
 
 main .r-projcontent2 .r-pc2text .r-pc2text1 h3 {
-  font-size: 1.7em;
+  font-size: 22px;
   font-weight: 800;
 }
 
 main .r-projcontent2 .r-pc2text .r-pc2text1 p {
   /* color: #cfcfc2; */
-  font-size: 1.65em;
+  font-size: 19px;
   font-weight: 500;
 }
 
@@ -334,7 +336,7 @@ main .r-projcontent2 .r-pc2text .r-pc2text2 {
 
 main .r-projcontent2 .r-pc2text .r-pc2text2 a {
   color: #a6e22e;
-  font-size: 1.6em;
+  font-size: 18px;
 }
 
 main .r-viewmore {
@@ -345,15 +347,65 @@ main .r-viewmore {
 main .r-viewmore h3 a {
   color: #cfcfc2;
   text-decoration: none;
-  font-size: 1.3em;
+  font-size: 16px;
 }
 
 main .r-viewmore h3 a span {
   color: #a6e22e;
 }
 
-footer .r-footmenu {
-  /* width: 60%; */
+footer,
+.links ul {
+  justify-content: space-between;
+  display: flex;
+}
+
+.modes #theme {
+  padding-left: 30px;
+  border: none;
+  outline: none;
+}
+
+select {
+  border: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+  color: var(--color-code-punctuation);
+}
+
+.up {
+  list-style: none;
+}
+
+.modes span {
+  font-size: 16px;
+  font-family: "Fira Code", monospace;
+  color: var(--color-body-text);
+  width: 88px;
+  height: 66px;
+}
+
+#theme a {
+  color: var(--color-accent-1);
+  text-decoration: underline;
+  font-family: "Fira Code", monospace;
+  font-size: 16px;
+}
+
+#theme {
+  font-family: "Fira Code", monospace;
+  font-size: 16px;
+  /* background-color: #2f363d; */
+  color: #dddddd;
+}
+
+#modes a:hover {
+  color: var(--color-accent-2);
+}
+/* footer .r-footmenu {
   float: left;
   margin-left: 0;
 }
@@ -371,7 +423,7 @@ footer .r-footmenu ul li a {
   color: #a6e22e;
   font-size: 1.6em;
   text-decoration: underline;
-}
+} */
 
 /* .r-navbar {
   width: 60%;
