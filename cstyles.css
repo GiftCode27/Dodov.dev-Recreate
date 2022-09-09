@@ -311,7 +311,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-top: 80px;
+  margin-top: 60px;
   padding: 78px;
   padding-bottom: 43%;
   
@@ -345,15 +345,21 @@ body {
   font-size: 1.45em;
 }
 
-.c-topstroke {
-  /* font-family:  "Fira Code", monospace; */
-  color: var(--color-secondary-text);
-  margin-bottom: 10px;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  overflow-wrap: anywhere;
-}
-
+.c-container hr{
+  color: var(--color-comment)
+ }
+ 
+ .c-container hr::before{
+ content: "//";
+ margin-right: 1ch;
+ }
+ 
+ .c-container hr::after{
+ content: "-------------------------------------------------------------";
+ overflow-wrap: anywhere;
+ font-variant-ligatures: none;
+ }
+ 
 main {
   display: flex;
   flex-direction: column;
@@ -507,6 +513,7 @@ padding-right: 5px;
 .projects-container nav {
   background-color: var(--color-bg);
   font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, system-ui, Ubuntu, sans-serif;
+  overflow: auto;
   }
   .projects-container .navbar {
     background-color: var(--color-tab);
@@ -519,7 +526,7 @@ padding-right: 5px;
   .projects-container nav a {
     font-family: -apple-system, BlinkMacSystemFont,  Segoe WPC, Segoe UI, system-ui,  Ubuntu, sans-serif;
     color: var(--color-tab-text);
-    font-size: 1.166666rem;
+    /* font-size: 1.166666rem; */
     text-decoration: none;
     font-size: .8125em;
     font-weight: 500;
@@ -542,7 +549,7 @@ padding-right: 5px;
       background-color:var(--color-editor);
       font-style: italic;
       color: var(--color-tab-text-active);
-      padding-right: .225em;
+      padding-right: .215em;
       font-weight: 550;
       font-size: .8125em;
   }
@@ -568,10 +575,8 @@ padding-right: 5px;
         
   }
 
-
   .projects-container nav .isactive span:active, {
     background-color: var(--color-tab-icon-active);
     border-radius: 5px;
         
   }
-
