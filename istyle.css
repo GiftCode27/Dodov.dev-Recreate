@@ -300,8 +300,8 @@ main {
  }
 
 .box{
-  width: 90%;
-  margin-right: 10px;
+  width: 100%;
+  padding-right: 30px;
 }
 
 a {
@@ -325,7 +325,7 @@ a {
 }
 
 .isub-container-right .title {
-  font-size: 1.4em;
+  font-size: 1.3em;
   font-weight: 800;
 }
 
@@ -341,7 +341,7 @@ a {
 .isub-container-right .idate {
   font-size: 0.9em;
   color: #cfcfc2;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 
