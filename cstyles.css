@@ -327,14 +327,20 @@ body {
   font-size: 1.45em;
 }
 
-.c-topstroke {
-  /* font-family:  "Fira Code", monospace; */
-  color: var(--color-secondary-text);
-  margin-bottom: 10px;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  overflow-wrap: anywhere;
-}
+.c-container hr{
+  color: var(--color-comment)
+ }
+ 
+ .c-container hr::before{
+ content: "//";
+ margin-right: 1ch;
+ }
+ 
+ .c-container hr::after{
+ content: "-------------------------------------------------------------";
+ overflow-wrap: anywhere;
+ font-variant-ligatures: none;
+ }
 
 main {
   display: flex;
