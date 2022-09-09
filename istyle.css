@@ -454,3 +454,103 @@ a {
     margin-right: 10px;
     color: var(--color-accent-1);
    }
+
+   .i-container hr{
+    color: var(--color-comment);
+    border: none;
+   }
+   
+   .i-container hr::before{
+   content: "//";
+   margin-right: 1ch;
+   margin-bottom: 5px;
+   }
+   
+   .i-container hr::after{
+   content: "-------------------------------------------------------------";
+   overflow-wrap: anywhere;
+   font-variant-ligatures: none;
+   margin-top: 15px;
+   }
+
+   /* nav styling begins */
+
+ nav {
+  background-color: var(--color-bg);
+  font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, system-ui,
+    Ubuntu, sans-serif;
+    /* align-items: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -19.6rem;
+    margin-top: 4rem;
+}
+ .navbar {
+  background-color: var(--color-tab);
+  display: flex;
+  user-select: none;
+  white-space: nowrap;
+  outline-offset: -1px;
+  width: fit-content;
+  
+}
+nav a {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, system-ui,
+    Ubuntu, sans-serif;
+  color: var(--color-tab-text);
+  font-size: 1.166666rem;
+  text-decoration: none;
+  font-size: 0.8125em;
+  font-weight: 500;
+  text-align: start;
+  min-width: 7.5rem;
+  padding-top: 0.625em;
+  padding-bottom: 0.625em;
+  padding-right: 2.32em;
+  padding-left: 0.925em;
+  border-right: 1px solid var(--color-bg);
+  display: flex;
+  align-items: center;
+}
+
+nav a:hover {
+  color: var(--color-tab-text);
+}
+
+nav .active{
+  background-color: var(--color-editor);
+}
+
+ nav .isactive {
+  background-color: var(--color-editor);
+  font-style: italic;
+  color: var(--color-tab-text-active);
+  padding-right: 0.225em;
+  font-weight: 550;
+  font-size: 0.8125em;
+}
+nav .isactive:hover {
+  color: var(--color-body-text-active);
+}
+
+ nav .isactive span {
+  font-size: 1.6em;
+  color: var(--color-tab-text-active);
+  font-weight: 350;
+  padding-top: 0;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  display: block;
+  margin-left: 0.3rem;
+}
+
+nav .isactive span:hover {
+  background-color: var(--color-tab-icon-hover);
+  border-radius: 5px;
+}
+
+nav .isactive span:active {
+  background-color: var(--color-tab-icon-active);
+  border-radius: 5px;
+} 

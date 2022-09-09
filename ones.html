@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +13,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <nav>
+      <div class="navbar">
+          <a href="index.html">home</a>
+          <a href="blog.html">blog</a>
+          <a href="ones.html" class="ones isactive">number-of-ones</a>
+          <span>&times;</span>
+          <a href="projects.html">projects</a>
+       </div>
+       </nav>
     <div class="i-container">
     <h2 class="i-text1 i-text11">Number of Ones</h2>
     <p class="i-text2 i-text22">Calculating digits in a series of numbers.</p>
@@ -71,10 +79,7 @@
       <p class="i-li lo"> <span class="dash">-</span>10 times as a digit in the tens column</p>
     
 
-      <div class="i-topstroke">
-        //
-        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-      </div>
+      <hr>
 
     <p>
       If we look at the numbers 0-999, we'll start to see patterns. Now, 1
@@ -292,11 +297,7 @@
 
               <p>similar puzzles and useful web development content.</p>
 
-              <div class="r-topstroke">
-                //
-                ------------------------------------------------------------------------------------------
-              </div>
-
+          <hr>
               
       <footer>
         <div class="links">
@@ -330,9 +331,9 @@
         </div>
         <div class="modes">
           <select name="theme" id="theme">
-            <option value="dark-plus"> Dark+ </option>
-            <option value="light-plus"> Light+ </option>
             <option value="monokai"> Monokai </option>
+            <option value="light-plus"> Light+ </option>
+            <option value="dark-plus"> Dark+ </option>
             <option value="github-dark"> GitHub Dark </option>
             <option value="github-light"> GitHub Light </option>
             <option value="solarized-light"> Solarized Light </option>

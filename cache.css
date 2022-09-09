@@ -432,7 +432,8 @@ text-align: center;
           
     }
     .g-container hr{
-        color: var(--color-comment)
+        color: var(--color-comment);
+        border:none;
        }
        
        .g-container hr::before{
