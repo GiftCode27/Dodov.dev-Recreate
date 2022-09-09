@@ -5,14 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"/>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="/cache.css" />
     <title>Browser Cache and Edge Cache Explained</title>
   </head>
+
   <body>
+
     <div class="g-container">
+      <div class="cache-container">
+        <nav>
+         <div class="navbar">
+         <a href="index.html">home</a>
+         <a href="blog.html">blog</a>
+         <a href="cache.html"class="cache isactive"> browser-cache-and-edge-cache-explained
+             <span> &times;</span>
+         </a>
+         <a href="projects.html">projects</a>
+     </div>
+        </nav>
+ 
       <div class="gdiv1">
         <div class="div1">
           <h2>Browser Cache and Edge Cache Explained</h2>
@@ -245,17 +258,61 @@
           incognito windows, and purge cache.
         </p>
       </div>
-      <p>//</p>
-  </body>
-  <footer>
-    <div class="gdiv4">
-      <ul>
-        <div><li><a href="#" class="glink">GitHub</a></li></div>
-        <div><li><a href="#" class="glink">Twitter</a></li></div>
-        <div><li><a href="#" class="glink">LinkedIn</a></li></div>
-       <div> <li><a href="#" class="glink">Instagram</a></li></div>
-      </ul>
-    </div>
-  </footer>
+      
+      <hr>
+
+      <footer>
+        <div class="links">
+            <ul>
+
+                <li class="up">
+                   <a class="social-link" href="https://github.io/yandodov" rel="noopener noreferrer" target="_blank">Github</a>
+                </li>
+
+                <li>
+                    <a class="social-link" href="https://twitter.com/yandodov" rel="noopener noreferrer" target="_blank">Twitter</a>
+
+                </li>
+
+                <li>
+                    <a class="social-link" href="https://www.linkedin.com/in/yandodov/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+
+                </li>
+
+                <li>
+                    <a class="social-link" href="https://www.instagram.com/yandodov/" rel="noopener noreferrer" target="_blank">Instagram</a>
+                    
+                </li>
+
+               
+            </ul>
+        </div>
+        <div class="modes">
+                <select name="theme" id="theme">  
+                    <option value="monokai">Monokai </option>
+                    <option value="light-plus"> Light+  </option>
+                    <option value="dark-plus">  Dark +   </option>
+                    <option value="github-dark"> GitHub Dark </option>
+                    <option value="github-light"> GitHub Light  </option>
+                    <option value="solarized-light"> Solarized Light </option>
+               </select>
+               <span class="colour">↓ </span>
+            
+        </div>
+    </footer>
+
+
+
+
+</main>
 </div>
+<script>
+const setTheme = theme => document.documentElement.className = theme;
+
+document.getElementById('theme').addEventListener('change', function() {
+setTheme(this.value);
+});
+
+</script>
+</body>
 </html>

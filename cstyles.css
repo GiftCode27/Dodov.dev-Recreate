@@ -306,14 +306,15 @@ body {
 
 .c-container {
   background-color: var(--color-editor);
-  width: 52%;
+  width: 50%;
   margin-bottom: 250px;
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-top: 60px;
+  margin-top: 20px;
   padding: 78px;
   padding-bottom: 43%;
+  padding-top: 20px;
   
 }
 
