@@ -20,6 +20,15 @@
         </div> -->
         
     <div class="r-container">
+
+      <div class="r-navbar">
+        <nav>
+          <a href="index.html" class="active">home</a>
+          <a href="blog.html">blog</a>
+          <a href="projects.html">projects</a>
+        </nav>
+      </div>
+
       <header>
         <div class="r-headercontent">
           <div class="r-aboutphoto">
@@ -30,7 +39,7 @@
               <h3>Hristiyan Dodov</h3>
               <p>
                 Full-Stack Developer at
-                <a href="#" id="oblik"> Oblik Studio </a>
+                <a href="./oblik.html" id="oblik"> Oblik Studio </a>
               </p>
             </div>
             <div class="r-abouttext2">
@@ -44,7 +53,7 @@
         </div>
         <div class="r-firststroke">
           //
-          ----------------------------------------------------------------------------------------------------
+          ------------------------------------------------------------------------------------------
         </div>
       </header>
 
@@ -55,11 +64,11 @@
         <div class="r-maincontent">
           <div class="r-maincontent1">
             <div class="r-mc1photo">
-              <a href="#"><img src="./images/number-of-ones-cover-342x.png" alt="" /></a>
+              <a href="./ones.html"><img src="./images/number-of-ones-cover-342x.png" alt="" /></a>
             </div>
             <div class="r-mc1text">
               <div class="r-mc1text1">
-                <h3>Number Of Ones</h3>
+                <h3><a href="./ones.html"> Number Of Ones</a></h3>
                 <p>Calculating digits in a series of numbers.</p>
               </div>
               <div class="r-mc1text2">
@@ -70,11 +79,11 @@
 
           <div class="r-maincontent2">
             <div class="r-mc2photo">
-              <a href="#"><img src="./images/rm-rf-git-cover-342x.png" alt="" /></a>
+              <a href="./framework.html"><img src="./images/rm-rf-git-cover-342x.png" alt="" /></a>
             </div>
             <div class="r-mc2text">
               <div class="r-mc2text1">
-                <h3>Don't Build Your Own Framework</h3>
+                <h3><a href="./framework.html"> Don't Build Your Own Framework</a></h3>
                 <p>
                   Delusions of having the ability to solve something once and
                   for all.
@@ -92,7 +101,7 @@
             </div>
             <div class="r-mc3text">
               <div class="r-mc3text1">
-                <h3>Browser Cache and Edge Cache Explained</h3>
+                <h3><a href="#"> Browser Cache and Edge Cache Explained</a></h3>
                 <p>You updated it? Well, yes, but not really. </a></p>
               </div>
               <div class="r-mc3text2">
@@ -102,12 +111,12 @@
           </div>
 
           <div class="r-readmore">
-             <h3><a href="#"> Read More <span> → </span></a></h3>
+             <h3><a href="blog.html"> Read More <span> → </span></a></h3>
           </div>
         </div>
         <div class="r-secondstroke">
           //
-          ----------------------------------------------------------------------------------------------------
+          ------------------------------------------------------------------------------------------
         </div>
 
         <div class="r-projects">
@@ -116,11 +125,11 @@
         <div class="r-projcontents">
             <div class="r-projcontent1">
                 <div class="r-pc1photo">
-                    <img src="./images/nexo-logo.svg" alt="" />
+                   <a href="./nexo.html"> <img src="./images/nexo-logo.svg" alt="" /></a>
                 </div>
                 <div class="r-pc1text">
                     <div class="r-pc1text1">
-                        <h3>Nexo</h3>
+                        <h3><a href="./nexo.html"> Nexo</a></h3>
                         <p>Developing and maintaining the product marketing website of the world's first crypto-backed loans.</p>
                     </div>
                     <div class="r-pc1text2"> <a href="">nexo.io</a></div>
@@ -129,11 +138,11 @@
 
             <div class="r-projcontent2">
                 <div class="r-pc2photo">
-                    <img src="./images/rundown-logo.svg" alt="" />
+                   <a href="./rundown.html"> <img src="./images/rundown-logo.svg" alt="" /></a>
                 </div>
                 <div class="r-pc2text">
                     <div class="r-pc2text1">
-                        <h3>Rundown</h3>
+                        <h3><a href="./rundown.html"> Rundown</a></h3>
                         <p>Turns your browser's new-tab page into a simple markdown editor with to-do lists and summaries.</p>
                     </div>
                     <div class="r-pc2text2"> <a href="">chrome.google.com</a></div>
@@ -142,12 +151,12 @@
         </div>
 
         <div class="r-viewmore">
-            <h3><a href="#">View More <span>→</span> </a></h3>
+            <h3><a href="projects.html">View More <span>→</span> </a></h3>
         </div>
 
          <div class="r-secondstroke">
           //
-          ----------------------------------------------------------------------------------------------------
+          - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
         </div>
       </main>
 
@@ -219,6 +228,16 @@
           </div>
         </footer>
     </div>
+
+    <script>
+      const setTheme = theme => document.documentElement.className = theme;
+
+      document.getElementById('theme').addEventListener('change', function() {
+      setTheme(this.value);
+      });
+
+    </script>
+
   </body>
 </html>
 
