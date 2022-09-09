@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="/cache.css" />
+    <title>Browser Cache and Edge Cache Explained</title>
+  </head>
+  <body>
+    <div class="g-container">
+      <div class="gdiv1">
+        <div class="div1">
+          <h2>Browser Cache and Edge Cache Explained</h2>
+          <p>08 Feb 2022</p>
+        </div>
+        <div class="div1">
+          <p>You updated it? Well, yes, but not really.</p>
+          <p class="g-hidden">182 lines</p>
+        </div>
+      </div>
+      <img
+        src="images/browser-edge-cache-cover-342x.png"
+        alt="image1"
+        width="90%"
+      />
+      <p class="gdiv2">Does the following sound familiar?</p>
+      <blockquote>
+        <div class="gdiv2">
+          <p class="gblockquote">
+            "The new feature is live."<br />
+            "I can't see it."<br />
+            "Have you cleared your browser cache?"<br />
+            "Yes. It's still not visible."<br />
+            <strong>"Hmmm…"</strong>
+          </p>
+        </div>
+      </blockquote>
+      <div class="gdiv3">
+        <p>
+          This could happen when there are multiple layers of
+          <a href="#" class="glink">caching</a> in <br />play and one of them has not expired.
+          If you've used something<br />like <a href="#" class="glink">Cloudflare CDN</a>,
+          you've likely ran into this.
+        </p>
+      </div>
+      <div class="gdiv2">
+        <h2>What is Browser Caching?</h2>
+      </div>
+      <div class="gdiv2">
+        <p>
+          Let's say your website has a logo in the header and it appears on<br />
+          all pages. When users land on your website and start browsing,<br />they'll
+          be downloading the same logo on every page load. This<br />
+          inefficiency increases bandwidth costs and load times.
+        </p>
+      </div>
+      <div class="gdiv3">
+        <p>
+          When sending the logo to the user, your server can also provide<br />
+          the <a href="#"><span class="gorange">Cache-Control</span> <span class="glink">response header</span></a> with an expiration value like<br />
+          <span class="gorange">max-‍age=604800</span>. This will tell the browser to store the logo<br />
+          locally, on the user's hard drive, for 604800 seconds, which is 7<br />
+          days. Until that time passes, whenever your website references<br />
+          the logo through the same URL, the user's browser will use its<br />
+          cached version. After that, the browser will request the logo<br />
+          from your server once again and cache it for another 7 days.
+        </p>
+      </div>
+      <div class="gdiv2"><h2>What is an Edge?</h2></div>
+      <div class="gdiv2">
+        <p>
+          If your audience is mainly European, it would probably make sense<br />
+          to put your server in London, for example. But if your website<br />
+          starts receiving traffic from America, those requests would have<br />
+          to travel an entire ocean, which can make them several times<br />
+          slower, due to <a href="#" class="glink">latency</a>. With a <a href="#" class="glink">CDN</a>,
+          you have a system of servers<br />
+          spread throughout the world that <a href="#" class="glink">proxy</a> user traffic to
+          your<br />
+          server and <a href="#" class="glink">solve this performance issue</a>.
+        </p>
+      </div>
+      <div class="gdiv2">
+        <p>
+          Among the <a href="#" class="glink">hundreds of servers</a> in a CDN, the
+          geographically<br />
+          closest one to a user is called an edge and is the one that this<br />
+          user's browser directly communicates with:
+        </p>
+      </div>
+      <img src="/images/repsonse flow.png" alt="responseflow" width="90%" />
+      <figcaption>Response flow from server to use over a CDN</figcaption>
+      <div>
+        <h2 class="gdiv2">What is Edge Caching?</h2>
+      </div>
+      <div class="gdiv2">
+        <p>
+          While browser caching helps with many requests by the same user,<br />
+          it doesn't solve the issue of many users making requests, because<br />
+          each user has their own browser with their own cache. To fix<br />
+          this, you need a shared cache.
+        </p>
+      </div>
+      <div class="gdiv2">
+        <p>
+          With a CDN, all user requests are funneled through the closest<br />
+          edge server. If that server caches the responses, it'll be able<br />
+          to serve those users without having to bother your own server.<br />
+          This means that it no longer matters if you have 1 user or 10000,<br />
+          because once that first response for a resource is served and<br />
+          cached, the load shifts from your server to the CDN, which can<br />
+          serve the other 9999 by itself.
+        </p>
+      </div>
+      <div class="gdiv2">
+        <p>
+          Cloudflare caches only static assets <a href="#" class="glink">by default</a>, such
+          as images,<br />
+          fonts, scripts, etc. The HTML containing the page content is not<br />
+          cached, because if you have an e-commerce store, for example,<br />
+          each user will have their own shopping cart, and if you cache<br />
+          that, the next user will see the previous one's items. On the<br />
+          other hand, an image is expected to be the same for every user<br />
+          and can safely be cached.
+        </p>
+      </div>
+      <div class="gdiv3">
+        <p>
+          Sites without shopping carts and other dynamic content, such as<br />
+          blogs, can opt in to <a href="#" class="glink">cache everything</a>. This makes it
+          possible for<br />
+          an edge to serve entire pages all by itself, without having to<br />
+          contact your server, as long as everything is cached. This way,<br />
+          you can have a very weak server, yet handle thousands of requests<br />
+          per second, because the load is mainly on the CDN.
+        </p>
+      </div>
+      <div class="gdiv2"><h2>Cache Invalidation</h2></div>
+      <div class="gdiv2">
+        <p>
+          The hard part in caching is picking a
+          <a href="#" class="glink">time to live (TTL)</a>, which<br />
+          determines when an entry is stale and should be discarded.
+        </p>
+      </div>
+      <div class="gdiv2">
+        <p>
+          Images and other assets can be cached for longer periods, because<br />
+          even if you pick a way too long TTL, you can change the URL to<br />
+          the resource and trigger a fresh request-response cycle:
+        </p>
+      </div>
+      <div class="ghash">
+        <div><a href="#" class="hash">#</a></div>
+        <div><p class="gscroll">https://example.com/about-us/image.jpg?version=2</p></div>
+      </div>
+      <div class="gdiv2">
+        <p>
+          However, if you've chosen to cache the HTML content of<br />
+          your pages as well, you'd have to get around that too,<br />
+          since changing the image URL means changing the HTML. So<br />
+          you'd have to change the page URL as well:
+        </p>
+      </div>
+      <div class="ghash">
+        <div><a href="#" class="hash">#</a></div>
+        <div><p class="gscroll">https://example.com/about-us?version=2</p></div>
+      </div>
+      <div class="gdiv2">
+        <p>
+          This is where things get tricky, because even if your web<br />
+          framework can easily change all links to the updated page,<br />
+          <strong>every other site on the internet</strong> also has to do it.
+          That's<br />
+          impossible, so you have to pick a window of time that<br />
+          you're comfortable with and in which users may see<br />
+          outdated content.
+        </p>
+      </div>
+      <div class="gdiv2"><p>If you have the following setup:</p></div>
+      <div class="gdiv2">
+        <ul>
+          <li>Browser cache TTL: <strong>30 minutes</strong></li>
+          <li>Edge cache TTL: <strong>1 minute</strong></li>
+        </ul>
+      </div>
+      <div class="gdiv2"><p>…there are several possible outcomes:</p></div>
+      <div>
+        <ol>
+          <li class="gdiv2">
+            If a change happened <strong>over 30 minutes ago</strong>, both
+            caches<br />
+            would have expired and it's guaranteed that the user<br />
+            will see the updated version.
+          </li>
+          <li class="gdiv2">
+            If a change happened <strong>over 1 minute ago</strong>, only the
+            edge<br />
+            cache is guaranteed to have expired. If a user has seen<br />
+            the page within the last 30 minutes and is cached by<br />
+            their browser, they can see the change by clearing<br />
+            their browser cache, opening an incognito window, or<br />
+            doing a <a href="#" class="glink">hard reload</a>.
+          </li>
+          <li class="gdiv3">
+            If a change happened <strong>less than 1 minute ago</strong>,
+            both<br />
+            caches would still be considered fresh. Users will not<br />
+            be able to see the update,
+            <strong
+              >even if they clear their<br />
+              browser cache</strong
+            >, because the closest edge server would<br />
+            still return the old version. The only solution here is<br />
+            for the website owner to prematurely force the cache to<br />
+            become stale by <a href="#" class="glink">purging it</a>.
+          </li>
+        </ol>
+      </div>
+      <div class="gdiv2"><h2>Conclusion</h2></div>
+      <div class="gdiv2">
+        <p>
+          <strong>Browser cache</strong> helps with subsequent requests by the
+          same<br />
+          user and makes your website feel snappy, because your<br />
+          assets don't have to travel over the internet.
+        </p>
+      </div>
+      <div class="gdiv2">
+        <p>
+          <strong>Edge cache</strong> helps with requests by a geographically
+          close group of users and can greatly reduce server load while
+          improving response times in distant countries.
+        </p>
+      </div>
+      <div class="gdiv2">
+        <p>
+          Pick a lower TTL to reduce the chance of outdated content, or a higher
+          TTL for better cache effectiveness, but be ready to change URLs, open
+          incognito windows, and purge cache.
+        </p>
+      </div>
+      <p>//</p>
+  </body>
+  <footer>
+    <div class="gdiv4">
+      <ul>
+        <div><li><a href="#" class="glink">GitHub</a></li></div>
+        <div><li><a href="#" class="glink">Twitter</a></li></div>
+        <div><li><a href="#" class="glink">LinkedIn</a></li></div>
+       <div> <li><a href="#" class="glink">Instagram</a></li></div>
+      </ul>
+    </div>
+  </footer>
+</div>
+</html>
