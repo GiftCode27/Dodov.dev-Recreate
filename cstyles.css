@@ -7,17 +7,16 @@
   border-color: currentColor;
 }
 
-body {
+body{
   background-color: var(--color-bg);
   color: var(--color-body-text);
   font-family: "Fira Code", monospace;
   line-height: inherit;
   overflow-x: hidden;
   line-height: var(--line);
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: center;
-  
+  justify-content: center; */
 }
 
 ::-webkit-scrollbar {
@@ -296,7 +295,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   padding: 78px;
   padding-bottom: 43%;
   padding-top: 20px;
@@ -489,6 +488,11 @@ select {
   font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, system-ui,
     Ubuntu, sans-serif;
     /* align-items: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -19.6rem;
+    margin-top: 4rem;
 }
  .navbar {
   background-color: var(--color-tab);
@@ -509,8 +513,8 @@ nav a {
   font-weight: 500;
   text-align: start;
   min-width: 7.5rem;
-  padding-top: 0.255em;
-  padding-bottom: 0.255em;
+  padding-top: 0.625em;
+  padding-bottom: 0.625em;
   padding-right: 2.32em;
   padding-left: 0.925em;
   border-right: 1px solid var(--color-bg);
@@ -522,15 +526,19 @@ nav a:hover {
   color: var(--color-tab-text);
 }
 
-nav .isactive {
+nav .active{
+  background-color: var(--color-editor);
+}
+
+/* nav .isactive {
   background-color: var(--color-editor);
   font-style: italic;
   color: var(--color-tab-text-active);
   padding-right: 0.225em;
   font-weight: 550;
   font-size: 0.8125em;
-}
-nav .isactive:hover {
+} */
+/* nav .isactive:hover {
   color: var(--color-body-text-active);
 }
 
@@ -553,7 +561,7 @@ nav .isactive span:hover {
 nav .isactive span:active {
   background-color: var(--color-tab-icon-active);
   border-radius: 5px;
-}
+} */
 
 /* media queries begins */
 
