@@ -12,14 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="fix-background">
+    <div class="fix fix-background">
         <div class="fix-container">
        <nav>
         <div class="navbar">
         <a href="index.html">home</a>
         <a href="blog.html">blog</a>
-        <a href="fix.html"class="fix isactive"> fixing-siteground-dynamic-cache-issues
-            <span> &times;</span>
+        <a href="fix.html"class="isactive"> fixing-siteground-dynamic-cache-issues
+            <span class="close"> &times;</span>
         </a>
         <a href="projects.html">projects</a>
     </div>
@@ -223,6 +223,14 @@
     document.getElementById('theme').addEventListener('change', function() {
     setTheme(this.value);
     });
+
+//  making the cancel sign work
+
+     document.getElementsByClassName("close")[0].addEventListener("click", closeBox);
+    
+     function closeBox(){
+        document.getElementsByClassName("fix")[0].style.display = "none";
+     }
 
    </script>
 
