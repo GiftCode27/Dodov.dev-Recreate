@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="favicon" href="https://dodov.dev/media/site/d0298ef0fd-1614418428/favicon-monokai.png" rel="icon"
+      type="image/png">
     <title>Number of Ones</title>
-    <link
-      rel="shortcut icon"
-      href="./images/favicon-dark-plus.png"
-      type="image/x-icon"
-    />
+    <link rel="stylesheet" href="istyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <h2>Number of Ones</h2>
-    <p>Calculating digits in a series of numbers.</p>
-    <img src="./images/number-of-ones-cover-896x.png" alt="ones" />
+    <div class="i-container">
+    <h2 class="i-text1 i-text11">Number of Ones</h2>
+    <p class="i-text2 i-text22">Calculating digits in a series of numbers.</p>
+    <img src="/images/number-of-ones-cover-342x.png" alt="ones" class="box" style="margin-bottom: 40px ;" />
 
-    <p>
+    <p class="i-text2">
       In this post, I'll explain my solution to the programming puzzle from
       <a
         href="https://buttondown.email/cassidoo/archive/science-is-not-a-boys-game-its-not-a-girls-game/"
@@ -27,42 +30,51 @@
       newsletter.
     </p>
 
-    <p>The task is simple:</p>
-    <li>Given an integer n, count the total number of 1 digits</li>
-    <li>appearing in all non-negative integers less than</li>
-    <li>or equal to n.</li>
+    <p class="i-text0">The task is simple:</p>
+    <p class="i-li"><span class="right">></span>  Given an integer n, count the total number of 1 digits</p>
+    <p class="i-li"> <span class="right">></span> appearing in all non-negative integers less than</p>
+    <p class="i-li lo "> <span class="right">></span> or equal to n.</p>
 
-    <p>
+    <p class="i-li" style="margin-bottom:60px;">
       Perhaps the most obvious solution is to just loop over the numbers,
       convert them to strings, and count the digits. But the larger the input
       number, the slower it gets. So, rather than counting, we can calculate the
       result.
     </p>
 
-    <h2>Idea</h2>
+    <h2 class="idea">Idea</h2>
 
-    <p>
+    <p class="i-li lo ">
       Let's start with the number of times that the digit 1 appears in the 0-9
       range. It's just one. The number 1.
     </p>
 
-    <p>
+    <p class="i-li lo ">
       Now, let's try 0-99. Here we have the same thing, with the difference
       being that it's repeated 10 times:
     </p>
 
-    <ol>
-      <li>1, 11, 21, 31, 41, 51, 61, 71, 81, 91</li>
-      <li>↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ (10)</li>
-    </ol>
-    <p>In total, the digit 1 appears 20 times in the numbers up to 99:</p>
+    
+      <p class="i-li"> <span class="num">1</span> 1, 11, 21, 31, 41, 51, 61, 71, 81, 91</p> 
+      <p class="i-li lo "> <span class="num">2</span> ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ (10)</p>
 
-    <ul>
-      <li>10 times as a digit in the units column</li>
-      <li>10 times as a digit in the tens column</li>
-    </ul>
+      <p class="i-li lo">So, the units (rightmost digit) contributes to the sum with a total of 10 occurrences.</p>
+      <p class="i-li lo">However, the range 10-19 is special, because each number there <em>always</em>  begins with 1:</p>
 
-    <hr />
+      
+      <p class="i-li"> <span class="num">1</span>10, 11, 12, 13, 14, 15, 16, 17, 18, 19</p> 
+      <p class="i-li lo"> <span class="num">2</span>↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑ (10)</p>
+  
+    <p class="i-li lo">In total, the digit 1 appears 20 times in the numbers up to 99:</p>
+
+      <p class="i-li"> <span class="dash">-</span>10 times as a digit in the units column</p>
+      <p class="i-li lo"> <span class="dash">-</span>10 times as a digit in the tens column</p>
+    
+
+      <div class="i-topstroke">
+        //
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      </div>
 
     <p>
       If we look at the numbers 0-999, we'll start to see patterns. Now, 1
@@ -285,23 +297,60 @@
                 ------------------------------------------------------------------------------------------
               </div>
 
-              <footer>
-                <div class="social-media-links">
-                  <div>
-                    <a href="https://github.com/hdodov">GitHub</a> •
-                  </div>
-                  <div>
-                    <a href="https://twitter.com/yandodov">Twitter </a> •
-                  </div>
-                  <div>
-                    <a href="https://www.linkedin.com/in/yandodov/">LinkedIn </a> •
-                  </div>
-                  <div>
-                    <a href="https://www.instagram.com/yandodov/">Instagram</a> •
-                  </div>
-              </div>
-            
-               </footer>
+              
+      <footer>
+        <div class="links">
+          <ul>
 
+            <li class="up">
+              <a class="social-link" href="https://github.io/yandodov" rel="noopener noreferrer"
+                target="_blank">Github</a>
+            </li>
+
+            <li>
+              <a class="social-link" href="https://twitter.com/yandodov" rel="noopener noreferrer"
+                target="_blank">Twitter</a>
+
+            </li>
+
+            <li>
+              <a class="social-link" href="https://www.linkedin.com/in/yandodov/" rel="noopener noreferrer"
+                target="_blank">LinkedIn</a>
+
+            </li>
+
+            <li>
+              <a class="social-link" href="https://www.instagram.com/yandodov/" rel="noopener noreferrer"
+                target="_blank">Instagram</a>
+
+            </li>
+
+
+          </ul>
+        </div>
+        <div class="modes">
+          <select name="theme" id="theme">
+            <option value="dark-plus"> Dark+ </option>
+            <option value="light-plus"> Light+ </option>
+            <option value="monokai"> Monokai </option>
+            <option value="github-dark"> GitHub Dark </option>
+            <option value="github-light"> GitHub Light </option>
+            <option value="solarized-light"> Solarized Light </option>
+          </select>
+          <span>↓ </span>
+
+        </div>
+      </footer>
+    </div>
+
+    
+    <script>
+      const setTheme = theme => document.documentElement.className = theme;
+  
+      document.getElementById('theme').addEventListener('change', function () {
+        setTheme(this.value);
+      });
+  
+    </script>
   </body>
 </html>

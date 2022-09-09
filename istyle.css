@@ -291,6 +291,10 @@ main {
  margin-bottom: 20px;
 }
 
+.i-text11{
+  margin-bottom: 0;
+}
+
  .i-text2{
   flex: 70%;
   padding-right: 10px;
@@ -299,9 +303,13 @@ main {
   margin-bottom: 20px;
  }
 
+ .i-text22{
+  margin-bottom: 60px ;
+ }
+
 .box{
-  width: 100%;
-  padding-right: 30px;
+  width: 90%;
+  margin-right: 10px;
 }
 
 a {
@@ -325,7 +333,7 @@ a {
 }
 
 .isub-container-right .title {
-  font-size: 1.3em;
+  font-size: 1.4em;
   font-weight: 800;
 }
 
@@ -341,7 +349,7 @@ a {
 .isub-container-right .idate {
   font-size: 0.9em;
   color: #cfcfc2;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 
@@ -407,3 +415,42 @@ a {
   .up {
     list-style: none;
   }
+
+
+  /* number of ones */
+
+  .i-text0{
+    flex: 70%;
+    padding-right: 10px;
+    color: #cfcfc2;
+    font-size: 1.20em;
+    margin-bottom: 30px;
+    margin-top: 30px;
+   }
+
+   .i-li {
+    font-size: 1.10em;
+   }
+
+   .lo{
+    margin-bottom: 30px;
+   }
+
+   .right {
+    color: var(--color-accent-1);
+    margin-right: 10px;
+  
+   }
+
+   .idea{
+    margin-bottom: 40px;
+   }
+
+   .num {
+    margin-right: 10px;
+   }
+
+   .dash {
+    margin-right: 10px;
+    color: var(--color-accent-1);
+   }
