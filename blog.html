@@ -1,34 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link id="favicon" href="https://dodov.dev/media/site/d0298ef0fd-1614418428/favicon-monokai.png" rel="icon" type="image/png">
-    <title>Blog</title>
-    <link rel="stylesheet" href="istyle.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"/>
- </head>
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link id="favicon" href="https://dodov.dev/media/site/d0298ef0fd-1614418428/favicon-monokai.png" rel="icon"
+    type="image/png">
+  <title>Blog</title>
+  <link rel="stylesheet" href="istyle.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+</head>
   <body>
-    <nav>
-      <div class="navbar">
-          <a href="index.html">home</a>
-          <a href="blog.html">blog</a>
-          <a href="projects.html">projects</a>
-       </div>
-       </nav>
     <div class="i-container">
-      <header>
-        <h2 class="i-text1">Blog</h2>
 
-        <p class="i-text2">
+      <nav>
+        <div class="navbar">
+          <a href="index.html">home</a>
+          <a href="fix.html" class="isactive">
+            blog
+            <!-- <span class="close"> &times;</span> -->
+          </a>
+          <a href="projects.html">projects</a>
+        </div>
+      </nav>
+      <header>
+        <h2 class="i-text1" style="padding-top:20px ;">Blog</h2>
+
+        <p class="i-text2" style="padding-top:0px ;">
           A place for my developer insights and life experiences.
         </p>
       </header>
 
       <main>
+
+        <div class="isub-container">
+          <div class="isub-container-left">
+            <img
+              src="./images/php-errors-cover-342x.png"
+              alt="php errors"
+              class="box"
+            />
+          </div>
+
+          <div class="isub-container-right">
+            <h2 class="title"><a href="#">Debugging PHP 502 and 504 Errors</a></h2>
+            <p class="icontent">Not all issues come with a wall of red text.</p>
+            <p class="idate">07 Sep 2022</p>
+          </div>
+        </div>
         <div class="isub-container">
           <div class="isub-container-left">
             <img
@@ -39,7 +61,7 @@
           </div>
 
           <div class="isub-container-right">
-            <h2 class="title"><a href="ones.html">Number of Ones</a></h2>
+            <h2 class="title"><a href="#">Number of Ones</a></h2>
             <p class="icontent">Calculating digits in a series of numbers.</p>
             <p class="idate">06 Aug 2022</p>
           </div>
@@ -51,7 +73,7 @@
           </div>
 
           <div class="isub-container-right">
-            <h2 class="title"><a href="framework.html">Don't Build Your Own Framework</a></h2>
+            <h2 class="title"><a href="#">Don't Build Your Own Framework</a></h2>
             <p class="icontent">Delusions of having the ability to solve something once and for all.</p>
             <p class="idate">19 Jun 2022</p>
           </div>
@@ -63,7 +85,7 @@
             </div>
   
             <div class="isub-container-right">
-              <h2 class="title"><a href="cache.html">Browser Cache and Edge Cache Explained</a></h2>
+              <h2 class="title"><a href="#">Browser Cache and Edge Cache Explained</a></h2>
               <p class="icontent">You updated it? Well, yes, but not really.</p>
               <p class="idate">08 Feb 2022</p>
             </div>
@@ -75,7 +97,7 @@
           </div>
 
           <div class="isub-container-right">
-            <h2 class="title"><a href="fix.html">Fixing SiteGround Dynamic Cache Issues</a></h2>
+            <h2 class="title"><a href="#">Fixing SiteGround Dynamic Cache Issues</a></h2>
             <p class="icontent">That's what you get for not using WordPress…</p>
             <p class="idate">12 Jan 2022</p>
           </div>
@@ -87,16 +109,15 @@
         </div>
 
         <div class="isub-container-right">
-          <h2 class="title"><a href="favorite.html">My Favorite Number</a></h2>
+          <h2 class="title"><a href="#">My Favorite Number</a></h2>
           <p class="icontent">Reason to start a blog…</p>
           <p class="idate">24 Dec 2021</p>
         </div>
     </div>
       </main>
+      <hr />
 
-      <hr>
-      
-      <footer>
+      <footer class="h-footer">
         <div class="links">
           <ul>
 
@@ -126,31 +147,47 @@
 
           </ul>
         </div>
-        <div class="modes">
+       
+        <div class="themes">
           <select name="theme" id="theme">
-            <option value="monokai"> Monokai </option>
-            <option value="light-plus"> Light+ </option>
-            <option value="dark-plus"> Dark+ </option>
-            <option value="github-dark"> GitHub Dark </option>
-            <option value="github-light"> GitHub Light </option>
-            <option value="solarized-light"> Solarized Light </option>
+            <option value="monokai">Monokai</option>
+            <option value="dark-plus">Dark+</option>
+            <option value="light-plus">Light+</option>
+            <option value="github-dark">GitHub Dark</option>
+            <option value="github-light">GitHub Light</option>
+            <option value="solarized-light">Solarized Light</option>
           </select>
-          <span>↓ </span>
-
+          <span class="colour">↓</span>
         </div>
+      </footer>
+    </main>
+  </section>
+</div>
+</div>
       </footer>
 
       </section>
 
     </div>
 
+
+    
     <script>
-      const setTheme = theme => document.documentElement.className = theme;
-  
-      document.getElementById('theme').addEventListener('change', function () {
+      const setTheme = (theme) => (document.documentElement.className = theme);
+
+      document.getElementById("theme").addEventListener("change", function () {
         setTheme(this.value);
       });
-  
+
+      //  making the cancel sign work
+
+      document
+        .getElementsByClassName("close")[0]
+        .addEventListener("click", closeBox);
+
+      function closeBox() {
+        document.getElementsByClassName("fix")[0].style.display = "none";
+      }
     </script>
   </body>
 </html>
