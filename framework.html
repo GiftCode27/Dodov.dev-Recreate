@@ -14,10 +14,11 @@
         <div class="navbar">
             <a href="index.html">home</a>
             <a href="blog.html">blog</a>
+            <a href="framework.html" class="framework isactive">don't-build-your-own-framework
+                <span> &times;</span>
+                </a>
             <a href="projects.html">projects</a>
-            <a href="oblik.html" class="oblik isactive">oblik-toolkit
-            <span> &times;</span>
-            </a>
+            
          </div>
          </nav>
     <div class="container">
@@ -228,13 +229,35 @@
         </footer>
      </main>
     </div>
-   <script>
-    const setTheme = theme => document.documentElement.className = theme;
+    <script>
 
-    document.getElementById('theme').addEventListener('change', function() {
-    setTheme(this.value);
-     });
-
-</script>
+        const setTheme = (theme) => {
+            localStorage.setItem("theme", theme)
+            document.documentElement.className = theme
+        };
+        
+        window.onload = (event) => {
+            const theme= localStorage.getItem('theme')
+            if (theme) {
+                setTheme(theme)
+                document.getElementById('theme').value =theme
+                return
+            }
+            setTheme('monokai')
+          console.log('page is fully loaded');
+        };
+        
+        // const getTheme = () => {
+        //             const theme = localStorage.getItem('theme');
+        //             theme && setTheme(theme);
+        //         }
+         
+        //     getTheme();
+        
+        document.getElementById("theme").addEventListener("change", function () {
+          setTheme(this.value);
+        });
+        
+        </script>
 </body>
 </html>

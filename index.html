@@ -51,10 +51,9 @@
             </div>
           </div>
         </div>
-        <div class="r-firststroke">
-          //
-          ------------------------------------------------------------------------------------------
-        </div>
+        
+        <hr>
+
       </header>
 
       <main>
@@ -114,10 +113,8 @@
              <h3><a href="blog.html"> Read More <span> → </span></a></h3>
           </div>
         </div>
-        <div class="r-secondstroke">
-          //
-          ------------------------------------------------------------------------------------------
-        </div>
+        
+        <hr>
 
         <div class="r-projects">
             <h3>Projects</h3>
@@ -228,15 +225,39 @@
           </div>
         </footer>
     </div>
-
     <script>
-      const setTheme = theme => document.documentElement.className = theme;
 
-      document.getElementById('theme').addEventListener('change', function() {
+    const setTheme = (theme) => {
+        localStorage.setItem("theme", theme)
+        document.documentElement.className = theme
+    };
+    
+    window.onload = (event) => {
+        const theme= localStorage.getItem('theme')
+        if (theme) {
+            setTheme(theme)
+            document.getElementById('theme').value =theme
+            return
+        }
+        setTheme('monokai')
+      console.log('page is fully loaded');
+    };
+    
+    // const getTheme = () => {
+    //             const theme = localStorage.getItem('theme');
+    //             theme && setTheme(theme);
+    //         }
+     
+    //     getTheme();
+    
+    document.getElementById("theme").addEventListener("change", function () {
       setTheme(this.value);
-      });
-
+    });
+    
     </script>
+
+  
+
 
   </body>
 </html>

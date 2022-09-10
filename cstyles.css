@@ -493,6 +493,7 @@ select {
     align-items: center;
     margin-left: -19.6rem;
     margin-top: 4rem;
+    overflow: auto;
 }
  .navbar {
   background-color: var(--color-tab);
@@ -563,14 +564,158 @@ nav .isactive span:active {
   border-radius: 5px;
 } 
 
- @media (max-width: 1024px) {
+
+
+
+
+
+
+
+
+@media (max-width: 2560px){
   .navbar {
-    margin-left: -15rem;
-    width: 50%;
+    margin-left: -37.5rem;
+  }
+}
+
+@media (max-width: 1440px){
+  .navbar {
+    margin-left: -2.5rem;
+  }
+}
+
+@media (max-width: 1280px){
+  .navbar {
+    margin-left: -5.3rem;
   }
   .c-container {
-    width: 100%;
+    width: 60%;
+  }
+}
+
+ @media (max-width: 1024px) {
+  .navbar {
+    margin-left: -2rem;
+   
+  }
+  .c-container {
+    width: 70%;
   }
   
 }
 
+@media (max-width: 912px) {
+
+  .navbar {
+    margin-left: 3rem;
+   
+  }
+}
+
+@media (max-width: 820px) {
+
+  .navbar {
+    margin-left: 7rem;
+   
+  }
+}
+
+@media (max-width: 768px) {
+  nav{
+    margin-top: 0;
+  }
+  .navbar {
+    margin-left: -6rem;
+   
+  }
+  .c-container {
+    width: 100%;
+    padding: 3rem;
+  }
+  body{
+    margin: 0;
+  }
+  
+}
+
+@media (max-width: 540px) {
+
+  .navbar {
+    margin-left: 8.5rem;
+   
+  }
+}
+
+@media (max-width: 425px) {
+  .navbar {
+    margin-left: 15.5rem;
+   
+  }
+  .c-container {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  main .c-mainpoint{
+    flex-flow: row wrap;
+  }
+  main .c-mainpoint .c-mp1photo{
+    margin-bottom: -1.5rem;
+  }
+  footer,
+.links ul {
+  flex-direction: column;
+  gap: 3px;
+}
+
+footer .links ul li{
+  list-style-type: none;
+}
+
+footer .modes{
+  margin-left: -2rem;
+  margin-top: 1rem;
+}
+  
+}
+
+@media (max-width: 395px) {
+  .navbar {
+    margin-left: 17.5rem;
+   
+  }
+}
+@media (max-width: 375px) {
+  .navbar {
+    margin-left: 18.5rem;
+   
+  }
+  .c-container {
+    width: 100%;
+    padding: 1.3rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .navbar {
+    margin-left: 18.5rem;
+   
+  }
+
+  .navbar a {
+ min-width: 6.5rem;
+   
+  }
+  .c-container {
+    width: 100%;
+    padding: 1.3rem;
+  }
+}
+
+@media (max-width: 280px) {
+
+  .navbar {
+    margin-left: 21rem;
+   
+  }
+}

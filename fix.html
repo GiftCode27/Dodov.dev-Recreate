@@ -218,22 +218,35 @@
 </div>
 
 <script>
-    const setTheme = theme => document.documentElement.className = theme;
 
-    document.getElementById('theme').addEventListener('change', function() {
-    setTheme(this.value);
-    });
-
-//  making the cancel sign work
-
-     document.getElementsByClassName("close")[0].addEventListener("click", closeBox);
+    const setTheme = (theme) => {
+        localStorage.setItem("theme", theme)
+        document.documentElement.className = theme
+    };
     
-     function closeBox(){
-        document.getElementsByClassName("fix")[0].style.display = "none";
-     }
-
-   </script>
-
+    window.onload = (event) => {
+        const theme= localStorage.getItem('theme')
+        if (theme) {
+            setTheme(theme)
+            document.getElementById('theme').value =theme
+            return
+        }
+        setTheme('monokai')
+      console.log('page is fully loaded');
+    };
+    
+    // const getTheme = () => {
+    //             const theme = localStorage.getItem('theme');
+    //             theme && setTheme(theme);
+    //         }
+     
+    //     getTheme();
+    
+    document.getElementById("theme").addEventListener("change", function () {
+      setTheme(this.value);
+    });
+    
+    </script>
 </body>
 
 </html>
