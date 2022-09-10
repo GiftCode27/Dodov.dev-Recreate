@@ -648,7 +648,7 @@ text-align: center;
     background-color: var(--color-bg);
     font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, system-ui, Ubuntu, sans-serif;
     overflow: auto;
-    margin-left: -3.75rem;
+    /* margin-left: -3.75rem; */
     margin-top: -2.5rem;
     width: 100%;
     }
