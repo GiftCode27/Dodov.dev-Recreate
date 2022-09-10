@@ -1,18 +1,19 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "Fira Code", monospace;
     box-sizing: border-box;
-    border-radius: 0;
+    border-style: solid;
+    border-width: 0;
     border-color: currentColor;
 }
 
 body {
     background-color: rgb(30, 31, 28);
-    padding: 400px;
-    padding-top: 40px;
+    /* padding: 400px; */
+    /* padding-top: 40px; */
     margin: 0;
     display: block;
+    font-family: "Fira Code", monospace;
     overflow-x: hidden;
     line-height: var(--line);
     background: var(--color-bg);
@@ -21,8 +22,10 @@ body {
 
 .container {
     width: 59%;
+    font-family: "Fira Code", monospace;
     /* height: 6000px; */
-    /* align-items: center; */
+    align-items: center;
+    justify-content: center;
     background-color:var(--color-editor);
     color: var(--color-body-text);
     margin-top: 4.3rem;
