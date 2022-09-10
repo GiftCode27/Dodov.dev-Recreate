@@ -12,19 +12,17 @@
       <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"/>
    </head>
    <body>
-        <div class="c-container">
-            <div class="projects-container">
-                <nav>
-                <div class="navbar">
-                    <a href="index.html">home</a>
-                    <a href="blog.html">blog</a>
-                    <a href="projects.html">projects</a>
-                    <a href="ghostmask.html" class="ghostmask isactive">ghostmask
-                    <span> &times;</span>
-                    </a>
-                 </div>
-                 </nav>
-            
+    <nav style="margin-left:-16.5rem;">
+        <div class="navbar">
+            <a href="index.html">home</a>
+            <a href="blog.html">blog</a>
+            <a href="projects.html">projects</a>
+            <a href="ghostmask.html" class="ghostmask isactive">ghostmask
+            <span> &times;</span>
+            </a>
+         </div>
+         </nav>
+        <div class="c-container">               
             <main>
                <div class="c-mainpoint">
                    <div class="c-mp1photo">
@@ -40,11 +38,10 @@
                        </p>
                    </div>
                </div>
+
+               <hr>
                 
-               <div class="c-topstroke">
-                //
-                - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-               </div>
+   
                <footer>
                   <div class="links">
                       <ul>
@@ -86,12 +83,35 @@
       </div>
       
       <script>
-           const setTheme = theme => document.documentElement.className = theme;
 
-            document.getElementById('theme').addEventListener('change', function() {
-            setTheme(this.value);
-       });
-      </script>
+        const setTheme = (theme) => {
+            localStorage.setItem("theme", theme)
+            document.documentElement.className = theme
+        };
+        
+        window.onload = (event) => {
+            const theme= localStorage.getItem('theme')
+            if (theme) {
+                setTheme(theme)
+                document.getElementById('theme').value =theme
+                return
+            }
+            setTheme('monokai')
+          console.log('page is fully loaded');
+        };
+        
+        // const getTheme = () => {
+        //             const theme = localStorage.getItem('theme');
+        //             theme && setTheme(theme);
+        //         }
+         
+        //     getTheme();
+        
+        document.getElementById("theme").addEventListener("change", function () {
+          setTheme(this.value);
+        });
+        
+        </script>
     </body>
 </html>
             

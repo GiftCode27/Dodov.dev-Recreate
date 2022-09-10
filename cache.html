@@ -309,12 +309,34 @@
 </div>
 </div>
 <script>
-const setTheme = theme => document.documentElement.className = theme;
 
-document.getElementById('theme').addEventListener('change', function() {
-setTheme(this.value);
-});
-
-</script>
+  const setTheme = (theme) => {
+      localStorage.setItem("theme", theme)
+      document.documentElement.className = theme
+  };
+  
+  window.onload = (event) => {
+      const theme= localStorage.getItem('theme')
+      if (theme) {
+          setTheme(theme)
+          document.getElementById('theme').value =theme
+          return
+      }
+      setTheme('monokai')
+    console.log('page is fully loaded');
+  };
+  
+  // const getTheme = () => {
+  //             const theme = localStorage.getItem('theme');
+  //             theme && setTheme(theme);
+  //         }
+   
+  //     getTheme();
+  
+  document.getElementById("theme").addEventListener("change", function () {
+    setTheme(this.value);
+  });
+  
+  </script>
 </body>
 </html>

@@ -1,356 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link id="favicon" href="https://dodov.dev/media/site/d0298ef0fd-1614418428/favicon-monokai.png" rel="icon"
+    type="image/png" />
+  <title>NUMBER OF ONES</title>
+  <link rel="stylesheet" href="istyle.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link id="favicon" href="https://dodov.dev/media/site/d0298ef0fd-1614418428/favicon-monokai.png" rel="icon"
-      type="image/png">
-    <title>Number of Ones</title>
-    <link rel="stylesheet" href="istyle.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
-  </head>
-  <body>
+<body>
+  <div class="i-background">
     <div class="i-container">
-    <h2 class="i-text1 i-text11">Number of Ones</h2>
-    <p class="i-text2 i-text22">Calculating digits in a series of numbers.</p>
-    <img src="/images/number-of-ones-cover-342x.png" alt="ones" class="box" style="margin-bottom: 40px ;" />
+      <nav>
+        <div class="navbar">
+          <a href="index.html">home</a>
+          <a href="blog.html">blog</a>
+          <a href="fix.html" class="isactive">
+            NUMBER OF ONES
+            <span class="close"> &times;</span>
+          </a>
+          <a href="projects.html">projects</a>
+        </div>
+      </nav>
 
-    <p class="i-text2">
-      In this post, I'll explain my solution to the programming puzzle from
-      <a
-        href="https://buttondown.email/cassidoo/archive/science-is-not-a-boys-game-its-not-a-girls-game/"
-        target="_blank"
-        >the latest issue</a
-      >
-      of <a href="https://twitter.com/cassidoo" target="_blank">@cassidoo</a>'s
-      newsletter.
-    </p>
+      <section class="h-content">
+        <main>
+          <header>
+            <div class="left">
+              <h1>Number of Ones</h1>
+              <p>Calculating digits in a series of numbers.</p>
+              <time datetime="2022-01-12T16:00:00+02:00" title="Saturday, August 6, 2022, 16:00 EET">
+                06 AUG 2022
+              </time>
+            </div>
 
-    <p class="i-text0">The task is simple:</p>
-    <p class="i-li"><span class="right">></span>  Given an integer n, count the total number of 1 digits</p>
-    <p class="i-li"> <span class="right">></span> appearing in all non-negative integers less than</p>
-    <p class="i-li lo "> <span class="right">></span> or equal to n.</p>
 
-    <p class="i-li" style="margin-bottom:60px;">
-      Perhaps the most obvious solution is to just loop over the numbers,
-      convert them to strings, and count the digits. But the larger the input
-      number, the slower it gets. So, rather than counting, we can calculate the
-      result.
-    </p>
+          </header>
 
-    <h2 class="idea">Idea</h2>
+          <img alt="number of ones" src="./images/number-of-ones-cover-342x.png" />
 
-    <p class="i-li lo ">
-      Let's start with the number of times that the digit 1 appears in the 0-9
-      range. It's just one. The number 1.
-    </p>
+          <article>
+            <p>
+              In this post, I'll explain my solution to the programming puzzle
+              from
+              <a href="https://buttondown.email/cassidoo/archive/science-is-not-a-boys-game-its-not-a-girls-game/"
+                target="_blank">the latest issue</a>
+              of
+              <a href="https://twitter.com/cassidoo" target="_blank">@cassidoo</a>'s newsletter.
+            </p>
 
-    <p class="i-li lo ">
-      Now, let's try 0-99. Here we have the same thing, with the difference
-      being that it's repeated 10 times:
-    </p>
+            <p class="i-text0">The task is simple:</p>
 
-    
-      <p class="i-li"> <span class="num">1</span> 1, 11, 21, 31, 41, 51, 61, 71, 81, 91</p> 
-      <p class="i-li lo "> <span class="num">2</span> ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ (10)</p>
-
-      <p class="i-li lo">So, the units (rightmost digit) contributes to the sum with a total of 10 occurrences.</p>
-      <p class="i-li lo">However, the range 10-19 is special, because each number there <em>always</em>  begins with 1:</p>
-
-      
-      <p class="i-li"> <span class="num">1</span>10, 11, 12, 13, 14, 15, 16, 17, 18, 19</p> 
-      <p class="i-li lo"> <span class="num">2</span>↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑ (10)</p>
-  
-    <p class="i-li lo">In total, the digit 1 appears 20 times in the numbers up to 99:</p>
-
-      <p class="i-li"> <span class="dash">-</span>10 times as a digit in the units column</p>
-      <p class="i-li lo"> <span class="dash">-</span>10 times as a digit in the tens column</p>
-    
-
-      <div class="i-topstroke">
-        //
-        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-      </div>
-
-    <p>
-      If we look at the numbers 0-999, we'll start to see patterns. Now, 1
-      appears in the units column not 10, but 100 times:
-    </p>
-
-    <ol>
-      <li>1, 11, 21... 131, 141, 151... 321, 641, 961... 991</li>
-      <li>↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ (100)</li>
-    </ol>
-
-    <p>
-      Notice how we can just take the last digit off the number and get the
-      number of times 1 will appear at the units position. For example, if we
-      have 236, we can take the 6 out and know that 1 will surely appear 23
-      times as a units digit. In this case, however, we must add one, because
-      231 is also part of the collection. If the end number was 230, we wouldn't
-      have that.
-    </p>
-
-    <p>
-      Now, we can do the same, but for the tens. If we remove the 36 from 236,
-      we get 2. So we know that the digit 1 will cycle 2 times in the tens
-      column:
-    </p>
-
-    <ol>
-      <li>10-19, 110-119</li>
-      <li>↑ ↑ ↑ ↑</li>
-    </ol>
-
-    <p>
-      But since the tens digit is 3, which is bigger than 1, we get one extra
-      cycle, namely 210-219. If we had 206, 0 is less than 1, so we wouldn't get
-      that extra cycle.
-    </p>
-
-    <p>
-      The special case is when the digit is 1. If we have 216, then we get an
-      incomplete extra cycle of only 7 repetitions, rather than 10. We go
-      through 210-216, not 210-219. So the occurrences of 1 in the tens column
-      depends on columns to the right. This time, we have to remove digits from
-      the left side. For the number 216, we remove 21 from it and get 6. We then
-      have to add 1, because even though 210 has 0 in the units, it still
-      counts. We end up with 7, which is the number of ones in the incomplete
-      cycle. Here's the entire calculation:
-    </p>
-
-    <ol>
-    <li> 236 </li>
-    <li> ││└  23*1 +   1*1 extra (because 6 > 1) =  24</li>
-    <li> |└─  2*10 +  1*10 extra (because 3 > 1) =  30</li>
-    <li> └── 0*100 + 1*100 extra (because 2 > 1) = 100</li>
-                                         total = 154</li>
-    </ol>
-
-    <p>Notice how we have a multiplier for each digit, and it increases exponentially: 1 for units, 10 for tens, 100 for
-      hundreds.</p>
-
-    <h2>Implementation</h2>
-
-    <p>Let's start with the multiplier. In code, we can loop over the digits in reverse to get it:</p>
-
-    <ol>
-      <li>[6, 3, 2].forEach((digit, i) => {</li>
-        <li>  let mul = Math.pow(10, i); // 1, 10, 100</li>
-        <li>});</li>
-    </ol>
-
-    <p>Now, we have to be able to take digits out of the number. In our first iteration, for the units, we have to take 23
-      out of 236. We can do that by dividing the number by 10, getting 23.6. We can then round it down with Math.floor() to
-      get 23.</p>
-
-      <p>For the tens, we have to get 2 out of 236. We can do that by dividing by 100, getting 2.36, and rounding down to 2.
-      </p>
-
-      <p>Basically, we multiply our multiplier by 10, divide, then floor, and we have successfully taken out the necessary
-        digits:</p>
-
-        <ol>
-          <li> 236</li>
-          <li>││└  23*1 = 23</li>
-          <li>│└─  2*10 = 20</li>
-          <li>└── 0*100 = 0</li>
-        </ol>
-
-        <p>In code, we can do it like this:</p>
-
-        <ol>
-          <li>let cycles = Math.floor(n / (mul * 10));</li>
-          <li>let ones = cycles * mul;</li>
-        </ol>
-        <p>Now, we have to handle cases where the digit is greater than 1. That's when we have one extra cycle:</p>
-
-        <ol>
-          <li>236</li>
-          <li> └─ 3 > 1 => extra cycle (210-219)</li>
-          <li></li>
-          <li>206</li>
-          <li>└─ 0 < 1 => no extra cycle (we don't reach 210)</li>
-        </ol>
-
-        <p>We add an extra if statement:</p>
-
-        <ol>
-          <li>let cycles = Math.floor(n / (mul * 10));</li>
-          <li>let ones = cycles * mul;</li>
-          <li></li>
-          <li>if (digit > 1) {</li>
-            <li>  ones += mul; // add one extra cycle</li>
-            <li>}</li>
-        </ol>
-
-        <p>Finally, we have the edge case where the digit is exactly 1. This is where we have an incomplete cycle and the result
-          depends on the digits to the right:</p>
-
-          <ol>
-            <li>216</li>
-            <li> └─ just 10-16, not 10-19, so we extract 6</li>
-            <li></li>
-            <li>136</li>
-            <li>└── just 100-136, not 100-199, so we extract 36</li>
-          </ol>
-
-          <p>We can get digits on the right by applying %, the <a
-              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder" target="_blank">remainder
-            operator </a>, to the number and the multiplier:</p>
-
-            <ol>
-              <li>216 % 10  = divide by 10 and get the remainder  => 6</li>
-              <li>136 % 100 = divide by 100 and get the remainder => 36</li>
-            </ol>
-
-            <p>However, we must add 1 to that remainder, because we need to count the 0 as well. In other words, for the tens, we
-              have:</p>
-
-              <ol>
-                <li>210, 211, 212, 213, 214, 215, 216 => 7 numbers in total</li>
-                <li> └┴───────────────────────────────── this counts as well</li>
-              </ol>
-              
-              <p>So we need to extend our if statement:</p>
-
-              <ol>
-                <li>if (digit > 1) {</li>
-                  <li>ones += mul; // add one extra cycle</li>
-                <li>} else if (digit === 1) {</li>
-                  <li>ones += (n % mul) + 1; // incomplete cycle</li>
-                  <li>}</li>
-              </ol>
-
-              <p>Put together, our logic looks like this:</p>
-
-              <ol>
-                <li>let n = 236;</li>
-                <li>let strings = n.toString().split("");       // ["2", "3", "6"]</li>
-                <li>let ints = strings.map((s) => parseInt(s)); // [2, 3, 6]</li>
-                <li>let digits = ints.reverse();                // [6, 3, 2]</li>
-                <li>let sum = 0;</li>
-                <li></li>
-                <li>digits.forEach((digit, i) => {</li>
-                  <li>let mul = Math.pow(10, i);</li>
-                  <li>let cycles = Math.floor(n / (mul * 10));</li>
-                  <li>let ones = cycles * mul;</li>
-                  <li></li>
-                  <li>if (digit > 1) {</li>
-                      <li>	ones += mul; // add one extra cycle</li>
-                  <li>} else if (digit === 1) {</li>
-                  <li>ones += (n % mul) + 1; // incomplete cycle</li>
-                  <li>}</li>
-                  <li></li>
-                  <li>sum += ones;</li>
-                  <li>});</li>
-                  <li></li>
-                  <li>console.log(sum); // 154</li>
-              </ol>
-
-              <p>Now, we can wrap that logic in an easily reusable function and use reduce() to accumulate the sum:</p>
-              <ol>
-                <li>function numberOfOnes(n) {</li>
-                   <li>return n</li>
-                   <li>	.toString()</li>
-                   <li>.split("")</li>
-                   <li>	.map((char) => parseInt(char))</li>
-                   <li>.reverse()</li>
-                    <li>.reduce((sum, digit, i) => {</li>
-                        <li>const mul = Math.pow(10, i);</li>
-                        <li></li>
-                        <li>	sum += Math.floor(n / (mul * 10)) * mul;</li>
-                        <li></li>
-                        <li>if (digit > 1) {</li>
-                            <li>sum += mul;</li>
-                        <li>} else if (digit === 1) {</li>
-                            <li>sum += (n % mul) + 1;</li>
-                        <li>	}</li>
-                        <li></li>
-                        <li>return sum;</li>
-                        <li>	}, 0);</li>
-                <li>}</li>
-              </ol>
-
-              <p>Here are some examples:</p>
-
-              <ol>
-                <li>console.log(numberOfOnes(14));    // 7</li>
-                <li>console.log(numberOfOnes(236));   // 154</li>
-                <li>console.log(numberOfOnes(420));   // 192</li>
-                <li>console.log(numberOfOnes(1337));  // 812</li>
-                <li>console.log(numberOfOnes(65536)); // 36714</li>
-              </ol>
-
-              <p>Play around with the code on <a href="https://codepen.io/dodov/pen/poLLNwy?editors=0012" target="_blank" rel="noopener noreferrer">CodePen</a>!</p>
-
-              <p>Also, make sure to subscribe to <a href="https://cassidoo.co/newsletter/" target="_blank" rel="noopener noreferrer">rendezvous with cassidoo</a> for</p>
-
-              <p>similar puzzles and useful web development content.</p>
-
-              <div class="r-topstroke">
-                //
-                ------------------------------------------------------------------------------------------
+            <blockquote>
+              <div class="wrapper">
+                Given an integer n, count the total number of 1 digits appearing in all non-negative integers less than
+                or equal to n.
               </div>
+            </blockquote>
 
-              
-      <footer>
-        <div class="links">
-          <ul>
+            <p>
+              Perhaps the most obvious solution is to just loop over the numbers, convert them to strings, and count the
+              digits. But
+              the larger the input number, the slower it gets. So, rather than counting, we can calculate the result.
+            </p>
 
-            <li class="up">
-              <a class="social-link" href="https://github.io/yandodov" rel="noopener noreferrer"
-                target="_blank">Github</a>
-            </li>
+            <h2 class="idea" style="margin-top:60px ;">Idea</h2>
 
-            <li>
-              <a class="social-link" href="https://twitter.com/yandodov" rel="noopener noreferrer"
-                target="_blank">Twitter</a>
+            <p>
+              Let's start with the number of times that the digit 1 appears in the 0-9 range. It's just one. The number
+              1.
+            </p>
 
-            </li>
+            <p>Now, let's try 0-99. Here we have the same thing, with the difference being that it's repeated 10 times:
+            </p>
 
-            <li>
-              <a class="social-link" href="https://www.linkedin.com/in/yandodov/" rel="noopener noreferrer"
-                target="_blank">LinkedIn</a>
+            <pre class="language-php"><code>1, 11, 21, 31, 41, 51, 61, 71, 81, 91
+                ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑ (10)</code></pre>
 
-            </li>
+            <p>
+              So, the units (rightmost digit) contributes to the sum with a total of 10 occurrences.
+            </p>
 
-            <li>
-              <a class="social-link" href="https://www.instagram.com/yandodov/" rel="noopener noreferrer"
-                target="_blank">Instagram</a>
+            <p>However, the range 10-19 is special, because each number there <em> always begins with 1</em></p>
 
-            </li>
+            <pre>
+               <code>10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+                ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑ (10)</code> </pre>
+
+            <p>In total, the digit 1 appears 20 times in the numbers up to 99:</p>
+
+            <p> <span class="dash">-</span>10 times as a digit in the units column</p>
+            <p style="margin-top: 0; margin-bottom:20px;"> <span class="dash">-</span>10 times as a digit in the tens
+              column</p>
+
+            <hr />
+
+            <p>If we look at the numbers 0-999, we'll start to see patterns. Now, 1 appears in the units column not 10,
+              but 100 times:</p>
+
+            <pre class="language-php try">
+                  <code>1, 11, 21... 131, 141, 151... 321, 641, 961... 991
+                  ↑   ↑   ↑      ↑    ↑    ↑      ↑    ↑    ↑      ↑ (100)</code></pre>
+
+            <p>Notice how we can just take the last digit off the number and get the number of times 1 will appear at
+              the units position. For example, if we have 236, we can take the 6 out and know that 1 will surely appear
+              23 times as a units digit. In this case, however, we must add one, because 231 is also part of the
+              collection. If the end number was 230, we wouldn't have that.</p>
+
+            <p style="margin-bottom:40px ;">Now, we can do the same, but for the tens. If we remove the 36 from 236, we
+              get 2. So we know that the digit 1 will cycle 2 times in the tens column:</p>
+
+            <pre><code>10-19, 110-119
+                    ↑  ↑    ↑   ↑</code></pre>
+
+            <p>But since the tens digit is 3, which is bigger than 1, we get one extra cycle, namely 210-219. If we had
+              206, 0 is less than 1, so we wouldn't get that extra cycle.</p>
+
+            <p>The special case is when the digit is 1. If we have 216, then we get an incomplete extra cycle of only 7
+              repetitions, rather than 10. We go through 210-216, not 210-219. So the occurrences of 1 in the tens
+              column depends on columns to the right. This time, we have to remove digits from the left side. For the
+              number 216, we remove 21 from it and get 6. We then have to add 1, because even though 210 has 0 in the
+              units, it still counts. We end up with 7, which is the number of ones in the incomplete cycle. Here's the
+              entire calculation:
+
+            </p>
+
+            <pre class="language-php try">
+                  <code>236
+                  ││└  23*1 +   1*1 extra (because 6 &gt; 1) =  24
+                  │└─  2*10 +  1*10 extra (because 3 &gt; 1) =  30
+                  └── 0*100 + 1*100 extra (because 2 &gt; 1) = 100
+                                                    total = 154</code>
+                  </pre>
+
+            <p>
+              Notice how we have a multiplier for each digit, and it increases exponentially: 1 for units, 10 for tens,
+              100 for hundreds.
+            </p>
+
+            <h2 class="idea" style="margin-top:60px ;">Implementation</h2>
+
+            <p>Let's start with the multiplier. In code, we can loop over the digits in reverse to get it:</p>
+
+            <div class="code-block">
+              <pre class="language-php">
+               <code class="language-php first-code" >
+                <span class="token punctuation">[</span>
+                <span class="token number">6</span>
+                <span class="token punctuation">,</span>
+                <span class="token number">3</span>
+                <span class="token punctuation">,</span>
+                <span class="token number">2</span>
+                <span class="token punctuation">]</span>
+                <span class="token punctuation">.</span>
+                <span class="token function">for Each</span>
+                <span class="token punctuation">(</span>
+                <span class="token punctuation">(</span>
+                <span class="token parameter">digit<span class="token punctuation">,</span> i</span>
+                <span class="token punctuation">)</span>
+                <span class="token operator">=&gt;</span>
+                <span class="token punctuation">{</span>
+                  <span class="token keyword">let</span> 
+                  <span class="token comment"> mul</span>
+                  <span class="token operator"> =</span>
+                  <span class="token comment"> math</span>
+                  <span class="token punctuation">.</span>
+                  <span class="token function">pow</span>
+                  <span class="token punctuation">(</span>
+                  <span class="token number">10</span>
+                  <span class="token punctuation">,</span>
+                  <span class="token string single-quoted-string">'i'</span>
+                  <span class="token punctuation">)</span>
+                  <span class="token punctuation">;</span>
+                  <span class="token comment">// 1, 10, 100</span>
+                  <span class="token punctuation">}</span>
+                  <span class="token punctuation">)</span>
+                  <span class="token punctuation">;</span>
+               </code>
+            </pre>
+            </div>
+
+            <p>Now, we have to be able to take digits out of the number. In our first iteration, for the units, we have
+              to take 23 out of <code>236</code>. We can do that by dividing the number by 10, getting
+              <code>23.6</code>. We can then round it down with <code>Math.floor()</code> to get <code>23</code>.</p>
+
+            <p>For the tens, we have to get 2 out of <code>236</code>. We can do that by dividing by <code>100</code>,
+              getting <code>2.36</code>, and rounding down to <code>2</code>.</p>
+
+            <p data-id="paragraph-4280">Basically, we multiply our multiplier by 10, divide, then floor, and we have
+              successfully taken out the necessary digits:</p>
 
 
-          </ul>
-        </div>
-        <div class="modes">
-          <select name="theme" id="theme">
-            <option value="dark-plus"> Dark+ </option>
-            <option value="light-plus"> Light+ </option>
-            <option value="monokai"> Monokai </option>
-            <option value="github-dark"> GitHub Dark </option>
-            <option value="github-light"> GitHub Light </option>
-            <option value="solarized-light"> Solarized Light </option>
-          </select>
-          <span>↓ </span>
+            <pre class="language-php try">
+                <code>236
+                ││└  mul = 1;   236/(mul*10) = 236/10   = 23.6; round(23.6) = 23;
+                │└─  mul = 10;  236/(mul*10) = 236/100  = 2.36; round(2.36) = 2;
+                └── mul = 100; 236/(mul*10) = 236/1000 = 0.23; round(0.23) = 0;
+                                                  </code>
+                </pre>
 
-        </div>
-      </footer>
+            <p>All that's left now is to apply the multiplier to those numbers and we get the number of
+              <strong>complete</strong> cycles with a 1 that each digit goes through:</p>
+
+            <pre class="language-php try">
+                  <code>236
+                    ││└  23*1 = 23
+                    │└─  2*10 = 20
+                    └── 0*100 = 0</code>
+                </pre>
+
+            <p>In code, we can do it like this:</p>
+            <pre class="language-php">
+                  <code class="  language-js"><span class="token keyword">let</span> cycles <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>n <span class="token operator">/</span> <span class="token punctuation">(</span>mul <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">let</span> ones <span class="token operator">=</span> cycles <span class="token operator">*</span> mul<span class="token punctuation">;</span></code>
+                </pre>
+
+
+            <p>Now, we have to handle cases where the digit is greater than 1. That's when we have one extra cycle:</p>
+
+            <pre class="language-php try">
+                  <code>236
+                    └─ 3 &gt; 1 =&gt; extra cycle (210-219)
+                   
+                   206
+                    └─ 0 &lt; 1 =&gt; no extra cycle (we don't reach 210)</code>
+                </pre>
+
+            <p>We add an extra <code>if</code> statement:</p>
+
+
+            <pre class="language-php try">
+                  <code class="  language-js"><span class="token keyword">let</span> cycles <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>n <span class="token operator">/</span> <span class="token punctuation">(</span>mul <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">let</span> ones <span class="token operator">=</span> cycles <span class="token operator">*</span> mul<span class="token punctuation">;</span>
+                    
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>digit <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                      ones <span class="token operator">+=</span> mul<span class="token punctuation">;</span> <span class="token comment">// add one extra cycle</span>
+                    <span class="token punctuation">}</span></code>
+                </pre>
+
+            <p>Finally, we have the edge case where the digit is exactly 1. This is where we have an incomplete cycle
+              and the result depends on the digits to the right:</p>
+            <pre class="language-php try">
+                  <code>216
+                    └─ just 10-16, not 10-19, so we extract 6
+                   
+                   136
+                   └── just 100-136, not 100-199, so we extract 36</code>
+                </pre>
+
+            <p>We can get digits on the right by applying <code>%</code>, the <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder"
+                rel="noopener noreferrer nofollow" target="_blank">remainder operator<span class="sr-only">(opens in new
+                  tab)</span></a>, to the number and the multiplier:</p>
+
+            <p>
+            <pre class="language-php try">
+                  <code>216 % 10  = divide by 10 and get the remainder  =&gt; 6
+                    136 % 100 = divide by 100 and get the remainder =&gt; 36</code>
+                </pre>
+            </p>
+
+            <p>However, we must add 1 to that remainder, because we need to count the 0 as well. In other words, for the
+              tens, we have:</p>
+
+            <p>
+            <pre class="language-php try">
+                    <code>210, 211, 212, 213, 214, 215, 216 =&gt; 7 numbers in total
+                      └┴───────────────────────────────── this counts as well</code>
+                  </pre>
+            </p>
+
+            <p>So we need to extend our <code>if</code> statement:</p>
+
+            <p>
+            <pre>
+                    <code class="  language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span>digit <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                      ones <span class="token operator">+=</span> mul<span class="token punctuation">;</span> <span class="token comment">// add one extra cycle</span>
+                    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>digit <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                      ones <span class="token operator">+=</span> <span class="token punctuation">(</span>n <span class="token operator">%</span> mul<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// incomplete cycle</span>
+                    <span class="token punctuation">}</span></code>
+                  </pre>
+            </p>
+
+            <p>Put together, our logic looks like this:</p>
+
+
+            <pre class="language-php try">
+                    <code class="  language-js"><span class="token keyword">let</span> n <span class="token operator">=</span> <span class="token number">236</span><span class="token punctuation">;</span>
+                      <span class="token keyword">let</span> strings <span class="token operator">=</span> n<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// ["2", "3", "6"]</span>
+                      <span class="token keyword">let</span> ints <span class="token operator">=</span> strings<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">s</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [2, 3, 6]</span>
+                      <span class="token keyword">let</span> digits <span class="token operator">=</span> ints<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment">// [6, 3, 2]</span>
+                      <span class="token keyword">let</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+                      
+                      digits<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">digit<span class="token punctuation">,</span> i</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                        <span class="token keyword">let</span> mul <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token keyword">let</span> cycles <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>n <span class="token operator">/</span> <span class="token punctuation">(</span>mul <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token keyword">let</span> ones <span class="token operator">=</span> cycles <span class="token operator">*</span> mul<span class="token punctuation">;</span>
+                      
+                        <span class="token keyword">if</span> <span class="token punctuation">(</span>digit <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                          ones <span class="token operator">+=</span> mul<span class="token punctuation">;</span> <span class="token comment">// add one extra cycle</span>
+                        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>digit <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                          ones <span class="token operator">+=</span> <span class="token punctuation">(</span>n <span class="token operator">%</span> mul<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// incomplete cycle</span>
+                        <span class="token punctuation">}</span>
+                      
+                        sum <span class="token operator">+=</span> ones<span class="token punctuation">;</span>
+                      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                      
+                      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 154</span></code>
+                  </pre>
+
+
+            <p>Now, we can wrap that logic in an easily reusable function and use <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"
+                rel="noopener noreferrer nofollow" target="_blank"><code>reduce()</code><span class="sr-only">(opens in
+                  new tab)</span></a> to accumulate the sum:</p>
+            <pre class="language-php try">
+                  <code class="  language-js"><span class="token keyword">function</span> <span class="token function">numberOfOnes</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> n
+                      <span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                      <span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span>
+                      <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">char</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>char<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                      <span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                      <span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">sum<span class="token punctuation">,</span> digit<span class="token punctuation">,</span> i</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                        <span class="token keyword">const</span> mul <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                  
+                        sum <span class="token operator">+=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>n <span class="token operator">/</span> <span class="token punctuation">(</span>mul <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> mul<span class="token punctuation">;</span>
+                  
+                        <span class="token keyword">if</span> <span class="token punctuation">(</span>digit <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                          sum <span class="token operator">+=</span> mul<span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>digit <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                          sum <span class="token operator">+=</span> <span class="token punctuation">(</span>n <span class="token operator">%</span> mul<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span>
+                  
+                        <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+                      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                  <span class="token punctuation">}</span></code>
+                </pre>
+
+            <p>Here are some examples:</p>
+
+            <pre class="language-php try">
+                  <code class="  language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">numberOfOnes</span><span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 7</span>
+                    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">numberOfOnes</span><span class="token punctuation">(</span><span class="token number">236</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 154</span>
+                    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">numberOfOnes</span><span class="token punctuation">(</span><span class="token number">420</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 192</span>
+                    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">numberOfOnes</span><span class="token punctuation">(</span><span class="token number">1337</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 812</span>
+                    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">numberOfOnes</span><span class="token punctuation">(</span><span class="token number">65536</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 36714</span></code>
+                </pre>
+
+            <p>Play around with the code <a href="https://codepen.io/dodov/pen/poLLNwy?editors=0012" target="_blank">on
+                CodePen<span class="sr-only">(opens in new tab)</span></a>!</p>
+
+            <p>Also, make sure to subscribe to <a href="https://cassidoo.co/newsletter/" target="_blank">rendezvous with
+                cassidoo<span class="sr-only">(opens in new tab)</span></a> for similar puzzles and useful web
+              development content.</p>
+
+
+          </article>
+
+          <hr />
+
+          <footer class="h-footer">
+            <div class="links">
+              <ul>
+                <li>
+                  <a class="social-link" href="https://github.io/yandodov" rel="noopener noreferrer"
+                    target="_blank">Github</a>
+                  <span>•</span>
+                </li>
+                <li>
+                  <a class="social-link" href="https://twitter.com/yandodov" rel="noopener noreferrer"
+                    target="_blank">Twitter</a>
+
+                  <span>•</span>
+                </li>
+
+                <li>
+                  <a class="social-link" href="https://www.linkedin.com/in/yandodov/" rel="noopener noreferrer"
+                    target="_blank">LinkedIn</a>
+
+                  <span>•</span>
+                </li>
+
+                <li>
+                  <a class="social-link" href="https://www.instagram.com/yandodov/" rel="noopener noreferrer"
+                    target="_blank">Instagram</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="themes">
+              <select name="theme" id="theme">
+                <option value="monokai">Monokai</option>
+                <option value="dark-plus">Dark+</option>
+                <option value="light-plus">Light+</option>
+                <option value="github-dark">GitHub Dark</option>
+                <option value="github-light">GitHub Light</option>
+                <option value="solarized-light">Solarized Light</option>
+              </select>
+              <span class="colour">↓</span>
+            </div>
+          </footer>
+
+        </main>
+      </section>
     </div>
+  </div>
 
-    
-    <script>
-      const setTheme = theme => document.documentElement.className = theme;
-  
-      document.getElementById('theme').addEventListener('change', function () {
-        setTheme(this.value);
-      });
-  
-    </script>
-  </body>
+  <script>
+    const setTheme = (theme) => (document.documentElement.className = theme);
+
+    document.getElementById("theme").addEventListener("change", function () {
+      setTheme(this.value);
+    });
+
+    //  making the cancel sign work
+
+    document
+      .getElementsByClassName("close")[0]
+      .addEventListener("click", closeBox);
+
+    function closeBox() {
+      document.getElementsByClassName("fix")[0].style.display = "none";
+    }
+  </script>
+</body>
+
 </html>

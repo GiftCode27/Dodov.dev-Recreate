@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <link id="favicon" href="https://dodov.dev/media/site/d0298ef0fd-1614418428/favicon-monokai.png" rel="icon" type="image/png">
+    <title>Home • Hristiyan Dodov</title>
     <link rel="stylesheet" href="rstyle.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -51,10 +52,9 @@
             </div>
           </div>
         </div>
-        <div class="r-firststroke">
-          //
-          ------------------------------------------------------------------------------------------
-        </div>
+        
+        <hr>
+
       </header>
 
       <main>
@@ -64,11 +64,11 @@
         <div class="r-maincontent">
           <div class="r-maincontent1">
             <div class="r-mc1photo">
-              <a href="./ones.html"><img src="./images/number-of-ones-cover-342x.png" alt="" /></a>
+              <a href="ones.html"><img src="./images/number-of-ones-cover-342x.png" alt="" /></a>
             </div>
             <div class="r-mc1text">
               <div class="r-mc1text1">
-                <h3><a href="./ones.html"> Number Of Ones</a></h3>
+                <h3><a href="ones.html"> Number Of Ones</a></h3>
                 <p>Calculating digits in a series of numbers.</p>
               </div>
               <div class="r-mc1text2">
@@ -97,11 +97,11 @@
 
           <div class="r-maincontent3">
             <div class="r-mc3photo">
-              <a href="#"><img src="./images/browser-edge-cache-cover-342x.png" alt="" /></a>
+              <a href="cache.html"><img src="./images/browser-edge-cache-cover-342x.png" alt="" /></a>
             </div>
             <div class="r-mc3text">
               <div class="r-mc3text1">
-                <h3><a href="#"> Browser Cache and Edge Cache Explained</a></h3>
+                <h3><a href="cache.html"> Browser Cache and Edge Cache Explained</a></h3>
                 <p>You updated it? Well, yes, but not really. </a></p>
               </div>
               <div class="r-mc3text2">
@@ -114,10 +114,8 @@
              <h3><a href="blog.html"> Read More <span> → </span></a></h3>
           </div>
         </div>
-        <div class="r-secondstroke">
-          //
-          ------------------------------------------------------------------------------------------
-        </div>
+        
+        <hr>
 
         <div class="r-projects">
             <h3>Projects</h3>
@@ -154,10 +152,12 @@
             <h3><a href="projects.html">View More <span>→</span> </a></h3>
         </div>
 
-         <div class="r-secondstroke">
+        <hr>
+
+         <!-- <div class="r-secondstroke">
           //
           - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-        </div>
+        </div> -->
       </main>
 
       <!-- <footer>
@@ -228,15 +228,39 @@
           </div>
         </footer>
     </div>
-
     <script>
-      const setTheme = theme => document.documentElement.className = theme;
 
-      document.getElementById('theme').addEventListener('change', function() {
+    const setTheme = (theme) => {
+        localStorage.setItem("theme", theme)
+        document.documentElement.className = theme
+    };
+    
+    window.onload = (event) => {
+        const theme= localStorage.getItem('theme')
+        if (theme) {
+            setTheme(theme)
+            document.getElementById('theme').value =theme
+            return
+        }
+        setTheme('monokai')
+      console.log('page is fully loaded');
+    };
+    
+    // const getTheme = () => {
+    //             const theme = localStorage.getItem('theme');
+    //             theme && setTheme(theme);
+    //         }
+     
+    //     getTheme();
+    
+    document.getElementById("theme").addEventListener("change", function () {
       setTheme(this.value);
-      });
-
+    });
+    
     </script>
+
+  
+
 
   </body>
 </html>

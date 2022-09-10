@@ -48,8 +48,10 @@
                 </p>
             </div>
         </header>
-
-        <img alt="The word 'SiteGround', surrounded by random characters." src="./images/siteground.png">
+ 
+        <div class="image-container">
+        <img alt="The word 'SiteGround', surrounded by random characters." src="./images/siteground.png" class="image">
+        </div>
 
         <article>
           <p>
@@ -199,7 +201,6 @@
 
             <div class="themes">
 
-
  
                    <select name="theme" id="theme">
                     <option value="monokai"> Monokai </option>    
@@ -217,23 +218,75 @@
 </div>
 </div>
 
-<script>
-    const setTheme = theme => document.documentElement.className = theme;
 
-    document.getElementById('theme').addEventListener('change', function() {
-    setTheme(this.value);
+<div class="popup-image">
+    <span class="close">&times;</span>
+    <img src="./images/siteground.png">
+</div>
+
+<script>
+
+    const setTheme = (theme) => {
+        localStorage.setItem("theme", theme)
+        document.documentElement.className = theme
+    };
+    
+    window.onload = (event) => {
+        const theme= localStorage.getItem('theme')
+        if (theme) {
+            setTheme(theme)
+            document.getElementById('theme').value =theme
+            return
+        }
+        setTheme('monokai')
+      console.log('page is fully loaded');
+    };
+    
+    // const getTheme = () => {
+    //             const theme = localStorage.getItem('theme');
+    //             theme && setTheme(theme);
+    //         }
+     
+    //     getTheme();
+    
+    document.getElementById("theme").addEventListener("change", function () {
+      setTheme(this.value);
     });
 
-//  making the cancel sign work
 
-     document.getElementsByClassName("close")[0].addEventListener("click", closeBox);
-    
-     function closeBox(){
-        document.getElementsByClassName("fix")[0].style.display = "none";
-     }
 
-   </script>
+    // creating image modal
 
+//   document.querySelectorAll("img").onclick =() => {
+//     document.querySelector(".popup-image").style.display ='block'
+//   }
+
+//   document.querySelectorAll(".popup-image span").onclick =() => {
+//   document.querySelector(".popup-image").style.display ='none'
+//   }
+
+//   const imgBtn = document.getElementsByClassName("image");
+
+//   const popUp = document.getElementsByClassName("popup-image")
+//   const cancel = document.getElementById("close")
+
+//     imgBtn.addEventListener("click", () =>{
+//         popUp.classList.add("show");
+//     })
+
+//     cancel.addEventListener("click", () =>{
+//         popUp.classList.remove("show");
+//     })
+
+
+    // img = document.getElementsByClassName('image');
+
+    // img.addEventListener("click", () => {
+    //     img.style. transform = "scale(1.5)";
+    //     img.style.transition = "transform 0.25s ease"
+
+    // })
+    </script>
 </body>
 
 </html>

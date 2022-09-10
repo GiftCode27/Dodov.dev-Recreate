@@ -10,6 +10,17 @@
 </head>
 
 <body>
+    <nav>
+        <div class="navbar">
+            <a href="index.html">home</a>
+            <a href="blog.html">blog</a>
+            <a href="framework.html" class="framework isactive">don't-build-your-own-framework
+                <span> &times;</span>
+                </a>
+            <a href="projects.html">projects</a>
+            
+         </div>
+         </nav>
     <div class="container">
         <div class="framework-1">
             <div class="col-1">
@@ -176,7 +187,77 @@
             </p>
             <p >You will always depend on other people's work. Embrace that!</p>
         </div>
-    </div>
-</body>
 
+        <footer>
+            <div class="links">
+                <ul>
+
+                    <li class="up">
+                       <a class="social-link" href="https://github.io/yandodov" rel="noopener noreferrer" target="_blank">Github</a>
+                    </li>
+
+                    <li>
+                        <a class="social-link" href="https://twitter.com/yandodov" rel="noopener noreferrer" target="_blank">Twitter</a>
+
+                    </li>
+
+                    <li>
+                        <a class="social-link" href="https://www.linkedin.com/in/yandodov/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+    
+                    </li>
+
+                    <li>
+                        <a class="social-link" href="https://www.instagram.com/yandodov/" rel="noopener noreferrer" target="_blank">Instagram</a>
+                        
+                    </li>
+
+                   
+                </ul>
+            </div>
+            <div class="modes">
+                    <select name="theme" id="theme">  
+                        <option value="monokai">Monokai </option>
+                        <option value="light-plus"> Light+  </option>
+                        <option value="dark-plus">  Dark +   </option>
+                        <option value="github-dark"> GitHub Dark </option>
+                        <option value="github-light"> GitHub Light  </option>
+                        <option value="solarized-light"> Solarized Light </option>
+                   </select>
+                   <span class="colour">↓ </span>
+                
+            </div>
+        </footer>
+     </main>
+    </div>
+    <script>
+
+        const setTheme = (theme) => {
+            localStorage.setItem("theme", theme)
+            document.documentElement.className = theme
+        };
+        
+        window.onload = (event) => {
+            const theme= localStorage.getItem('theme')
+            if (theme) {
+                setTheme(theme)
+                document.getElementById('theme').value =theme
+                return
+            }
+            setTheme('monokai')
+          console.log('page is fully loaded');
+        };
+        
+        // const getTheme = () => {
+        //             const theme = localStorage.getItem('theme');
+        //             theme && setTheme(theme);
+        //         }
+         
+        //     getTheme();
+        
+        document.getElementById("theme").addEventListener("change", function () {
+          setTheme(this.value);
+        });
+        
+        </script>
+</body>
 </html>
