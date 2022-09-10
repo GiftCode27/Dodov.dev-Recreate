@@ -283,15 +283,18 @@ body {
 }
 
 .r-container .r-navbar {
-  width: 100px;
-  padding-bottom: 20px;
-  margin-bottom: 15px;
+  /* width: 100px; */
+  padding-bottom: 0px;
+  margin-bottom: 1.5rem;
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
   padding-left: 0;
   float: left;
-  margin-left: 0;
+  margin-left: -4.4rem;
+  background-color: var(--color-bg);
+  width: 120.7%;
 }
 
 .r-container .r-navbar nav {
@@ -302,21 +305,20 @@ body {
   outline-offset: -1px;
   width: 100%;
   justify-content: flex-start;
-  flex: 100%;
-  float: left;
-  margin-left: 0;
+  /* flex: 100%; */
+  width: fit-content;
 }
 
 .r-container .r-navbar nav a {
   color: var(--color-tab-text);
-  font-size: 1.166666rem;
+  /* font-size: 1.166666rem; */
   text-decoration: none;
-  font-size: 1.1125em;
+  font-size: .9125em;
   font-weight: 500;
   text-align: start;
   min-width: 7.5rem;
-  padding-top: 0.255em;
-  padding-bottom: 0.255em;
+  padding-top: 0.525em;
+  padding-bottom: 0.525em;
   padding-right: 2.32em;
   padding-left: 0.925em;
   border-right: 1px solid var(--color-bg);
@@ -330,13 +332,13 @@ body {
   color: var(--color-tab-text);
 }
 
-.r-container .r-navbar nav a .active {
+.r-container .r-navbar nav .active {
   background-color: var(--color-editor);
-  font-style: italic;
+  /* font-style: italic;
   color: var(--color-tab-text-active);
   padding-right: 0.225em;
   font-weight: 550;
-  font-size: 0.8125em;
+  font-size: 0.8125em; */
 }
 
 header .r-headercontent {
@@ -717,6 +719,8 @@ footer {
 footer .links {
   flex: 60%;
   align-content: left;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 footer .modes {
@@ -726,6 +730,7 @@ footer .modes {
 footer .links ul {
   justify-content: space-between;
   display: flex;
+  flex-flow: row wrap;
   gap: 30px;
   float: left;
 }
@@ -827,6 +832,11 @@ footer .links ul li a:hover {
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .r-container {
     width: 100%;
+    margin-top: 0rem;
+  }
+
+  .r-container .r-navbar{
+    width: 122%;
   }
 
   .r-container .r-navbar nav a {
@@ -942,10 +952,17 @@ footer .links ul li a:hover {
   .r-container {
     width: 150%;
     padding: 40px;
+    margin-top: 0rem;
+  }
+
+  .r-container .r-navbar{
+    width: 114%;
+    margin-top: -2.5rem;
+    margin-left: -2.3rem;
   }
 
   .r-container .r-navbar nav a {
-    font-size: 0.89rem;
+    font-size: 0.9rem;
   }
 
   /* header .r-headercontent {
@@ -1101,7 +1118,22 @@ footer .links ul li a:hover {
     font-size: 16px;
   }
 
+  footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  footer .links ul{
+    flex-direction: column;
+    gap: 2px;
+  }
+  footer .links ul li{
+    list-style-type: none;
+  }
   footer .links ul li a {
     font-size: 16px;
+  }
+
+  footer .modes{
+    margin-left: -2rem;
   }
 }
