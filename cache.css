@@ -21,14 +21,16 @@ body{
 
 
 .g-container{
-    width: 52%;
+    /* width: 52%; */
     margin: auto;
     margin-bottom: 250px;
     background-color: var(--color-editor);
-    padding: 10px 40px;
     align-items: center;
     padding-bottom: 43%;
     justify-content: center;
+}
+.maincontainer{
+    padding: 10px 40px;
 }
 
 
@@ -652,6 +654,7 @@ text-align: center;
       white-space: nowrap;
       outline-offset: -1px;
       width: fit-content;
+      padding: 8px;
     }
     .cache-container nav a {
       font-family: -apple-system, BlinkMacSystemFont,  Segoe WPC, Segoe UI, system-ui,  Ubuntu, sans-serif;
@@ -741,11 +744,6 @@ text-align: center;
       
       }
       
-      footer, .links ul{
-        justify-content:space-between;
-        display: flex;
-      }
-      
       
        .modes #theme {
         padding-left: 30px;
@@ -831,8 +829,10 @@ text-align: center;
     display: block;
 }
 .g-container{
-    padding: 10px 60px;
     max-width: 700px;
+}
+.maincontainer{
+    padding: 10px 60px;
 }
 img{
     max-width: 600px;
@@ -840,5 +840,15 @@ img{
 .gdiv1, .gdiv2, .gdiv3{
     max-width: 650px;
     min-width: 300px;
+}
+.footer, .links ul{
+        justify-content:space-between;
+        display: flex;
+      }
+      
+}
+@media screen and (min-width: 700px){
+    .links .li{
+        list-style-type: none;
 }
 }
