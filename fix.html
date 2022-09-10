@@ -48,8 +48,10 @@
                 </p>
             </div>
         </header>
-
-        <img alt="The word 'SiteGround', surrounded by random characters." src="./images/siteground.png">
+ 
+        <div class="image-container">
+        <img alt="The word 'SiteGround', surrounded by random characters." src="./images/siteground.png" class="image">
+        </div>
 
         <article>
           <p>
@@ -199,7 +201,6 @@
 
             <div class="themes">
 
-
  
                    <select name="theme" id="theme">
                     <option value="monokai"> Monokai </option>    
@@ -215,6 +216,12 @@
     </main>
    </section>
 </div>
+</div>
+
+
+<div class="popup-image">
+    <span class="close">&times;</span>
+    <img src="./images/siteground.png">
 </div>
 
 <script>
@@ -245,7 +252,40 @@
     document.getElementById("theme").addEventListener("change", function () {
       setTheme(this.value);
     });
-    
+
+
+
+    // creating image modal
+
+//   document.querySelectorAll("img").onclick =() => {
+//     document.querySelector(".popup-image").style.display ='block'
+//   }
+
+//   document.querySelectorAll(".popup-image span").onclick =() => {
+//   document.querySelector(".popup-image").style.display ='none'
+//   }
+
+//   const imgBtn = document.getElementsByClassName("image");
+
+//   const popUp = document.getElementsByClassName("popup-image")
+//   const cancel = document.getElementById("close")
+
+//     imgBtn.addEventListener("click", () =>{
+//         popUp.classList.add("show");
+//     })
+
+//     cancel.addEventListener("click", () =>{
+//         popUp.classList.remove("show");
+//     })
+
+
+    // img = document.getElementsByClassName('image');
+
+    // img.addEventListener("click", () => {
+    //     img.style. transform = "scale(1.5)";
+    //     img.style.transition = "transform 0.25s ease"
+
+    // })
     </script>
 </body>
 
