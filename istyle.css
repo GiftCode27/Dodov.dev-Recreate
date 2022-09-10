@@ -100,7 +100,6 @@ background-color: var(--color-selection);
 --color-focus: #007fd4;
 --color-tab-icon-hover: #5a5d5e50;
 --color-tab-icon-active: #63666750;
-
 --color-code-bg: #1c1c1c;
 --color-code-text: #d4d4d4;
 --color-code-text-inline: #ce9178;
@@ -506,8 +505,8 @@ font-variant-ligatures: none;
  }
 
 .i-container article code{
-  color: var(--color-secondary-text);
-  font-size: 1.1rem;
+ color: var(--color-secondary-text);
+ font-size: 1.1rem;
 }
 
 .i-container article blockquote {
@@ -636,7 +635,7 @@ overflow: auto;}
   margin: 0 auto;
   background-color: var(--color-editor);
   width: 60%;
-  /* margin-top: 80px; */
+  margin-top: 80px;
   justify-content: center;
   align-items: center;
   padding: 70px;
@@ -652,7 +651,7 @@ overflow: auto;}
 .i-text1{
  flex: 70%;
  padding-right: 10px;
- color: var(--color-body-text);
+ color: #cfcfc2;
  font-size: 1.45em;
  margin-bottom: 20px;
 }
@@ -664,7 +663,7 @@ overflow: auto;}
  .i-text2{
   flex: 70%;
   padding-right: 10px;
-  color: var(--color-secondary-text);
+  color: #cfcfc2;
   font-size: 1.20em;
   margin-bottom: 20px;
  }
@@ -711,12 +710,12 @@ a {
 
 .isub-container-right .icontent {
   font-size: 1.11em;
-  color: var(--color-body-text);
+  color: #cfcfc2;
 }
 
 .isub-container-right .idate {
   font-size: 0.9em;
-  color: var(--color-secondary-text);
+  color: #cfcfc2;
   margin-top: 30px;
 }
 
