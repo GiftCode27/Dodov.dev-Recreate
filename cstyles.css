@@ -11,16 +11,16 @@ body{
   background-color: var(--color-bg);
   color: var(--color-body-text);
   font-family: "Fira Code", monospace;
-  line-height: inherit;
-  overflow-x: hidden;
-  line-height: var(--line);
+  /* line-height: inherit;
+  overflow-x: hidden; */
+  /* line-height: var(--line); */
   /* display: flex;
   flex-direction: column;
   justify-content: center; */
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  display:;
 }
 *::-webkit-scrollbar-corner,
 *::-webkit-scrollbar-button {
@@ -91,7 +91,7 @@ body{
   --color-code-removed: #f92672;
 }
 
-body {
+/* body {
   margin: 0;
   display: block;
   margin: 8px;
@@ -100,7 +100,7 @@ body {
   line-height: var(--line);
   background: var(--color-bg);
   color: var(--color-body-text);
-}
+} */
 
 :root.dark-plus {
   --color-bg: #252526;
@@ -295,7 +295,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: auto;
-  /* margin-top: 20px; */
+  margin-top: 20px;
   padding: 78px;
   padding-bottom: 43%;
   padding-top: 20px;
@@ -303,8 +303,9 @@ body {
 }
 
 .c-focus {
-  flex: 70%;
+  /* flex: 70%; */
   padding-right: 10px;
+  margin-top: 20px;
 }
 
 .c-focus .c-focus1 {
@@ -358,13 +359,12 @@ main .c-focal {
   float: left;
   margin-left: 0;
 }
-
-main .c-mainpoint {
+ .c-mainpoint {
   display: flex;
   width: 100%;
   padding-top: 20px;
   gap: 40px;
-  /* padding-bottom: 20px; */
+  padding-bottom: 20px;
 }
 
 .c-mp1photo img {
@@ -491,11 +491,11 @@ select {
     Ubuntu, sans-serif;
     /* align-items: center; */
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    margin-left: -23.85rem;
-    margin-top: 4rem;
-    overflow: auto;
+    /* margin-left: -23.85rem; */
+    /* margin-top: 4rem; */
+    /* overflow: auto; */
 }
  .navbar {
   background-color: var(--color-tab);
@@ -503,16 +503,16 @@ select {
   user-select: none;
   white-space: nowrap;
   outline-offset: -1px;
-  width: fit-content;
+  /* width: fit-content; */
   
 }
 nav a {
   font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, system-ui,
     Ubuntu, sans-serif;
   color: var(--color-tab-text);
-  font-size: 1.166666rem;
+  font-size: 1rem;
   text-decoration: none;
-  font-size: 0.8125em;
+  /* font-size: 0.8125em; */
   font-weight: 500;
   text-align: start;
   min-width: 7.5rem;
