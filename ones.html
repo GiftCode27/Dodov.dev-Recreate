@@ -79,7 +79,7 @@
             <p>Now, let's try 0-99. Here we have the same thing, with the difference being that it's repeated 10 times:
             </p>
 
-            <pre><code>1, 11, 21, 31, 41, 51, 61, 71, 81, 91
+            <pre class="language-php"><code>1, 11, 21, 31, 41, 51, 61, 71, 81, 91
                 ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑ (10)</code></pre>
 
             <p>
@@ -103,7 +103,7 @@
             <p>If we look at the numbers 0-999, we'll start to see patterns. Now, 1 appears in the units column not 10,
               but 100 times:</p>
 
-            <pre>
+            <pre class="language-php try">
                   <code>1, 11, 21... 131, 141, 151... 321, 641, 961... 991
                   ↑   ↑   ↑      ↑    ↑    ↑      ↑    ↑    ↑      ↑ (100)</code></pre>
 
@@ -130,7 +130,7 @@
 
             </p>
 
-            <pre>
+            <pre class="language-php try">
                   <code>236
                   ││└  23*1 +   1*1 extra (because 6 &gt; 1) =  24
                   │└─  2*10 +  1*10 extra (because 3 &gt; 1) =  30
@@ -196,7 +196,7 @@
               successfully taken out the necessary digits:</p>
 
 
-            <pre>
+            <pre class="language-php try">
                 <code>236
                 ││└  mul = 1;   236/(mul*10) = 236/10   = 23.6; round(23.6) = 23;
                 │└─  mul = 10;  236/(mul*10) = 236/100  = 2.36; round(2.36) = 2;
@@ -207,7 +207,7 @@
             <p>All that's left now is to apply the multiplier to those numbers and we get the number of
               <strong>complete</strong> cycles with a 1 that each digit goes through:</p>
 
-            <pre>
+            <pre class="language-php try">
                   <code>236
                     ││└  23*1 = 23
                     │└─  2*10 = 20
@@ -215,7 +215,7 @@
                 </pre>
 
             <p>In code, we can do it like this:</p>
-            <pre>
+            <pre class="language-php">
                   <code class="  language-js"><span class="token keyword">let</span> cycles <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>n <span class="token operator">/</span> <span class="token punctuation">(</span>mul <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
                     <span class="token keyword">let</span> ones <span class="token operator">=</span> cycles <span class="token operator">*</span> mul<span class="token punctuation">;</span></code>
                 </pre>
@@ -223,7 +223,7 @@
 
             <p>Now, we have to handle cases where the digit is greater than 1. That's when we have one extra cycle:</p>
 
-            <pre>
+            <pre class="language-php try">
                   <code>236
                     └─ 3 &gt; 1 =&gt; extra cycle (210-219)
                    
@@ -234,7 +234,7 @@
             <p>We add an extra <code>if</code> statement:</p>
 
 
-            <pre>
+            <pre class="language-php try">
                   <code class="  language-js"><span class="token keyword">let</span> cycles <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>n <span class="token operator">/</span> <span class="token punctuation">(</span>mul <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
                     <span class="token keyword">let</span> ones <span class="token operator">=</span> cycles <span class="token operator">*</span> mul<span class="token punctuation">;</span>
                     
@@ -245,7 +245,7 @@
 
             <p>Finally, we have the edge case where the digit is exactly 1. This is where we have an incomplete cycle
               and the result depends on the digits to the right:</p>
-            <pre>
+            <pre class="language-php try">
                   <code>216
                     └─ just 10-16, not 10-19, so we extract 6
                    
@@ -259,7 +259,7 @@
                   tab)</span></a>, to the number and the multiplier:</p>
 
             <p>
-            <pre>
+            <pre class="language-php try">
                   <code>216 % 10  = divide by 10 and get the remainder  =&gt; 6
                     136 % 100 = divide by 100 and get the remainder =&gt; 36</code>
                 </pre>
@@ -269,7 +269,7 @@
               tens, we have:</p>
 
             <p>
-            <pre>
+            <pre class="language-php try">
                     <code>210, 211, 212, 213, 214, 215, 216 =&gt; 7 numbers in total
                       └┴───────────────────────────────── this counts as well</code>
                   </pre>
@@ -290,7 +290,7 @@
             <p>Put together, our logic looks like this:</p>
 
 
-            <pre>
+            <pre class="language-php try">
                     <code class="  language-js"><span class="token keyword">let</span> n <span class="token operator">=</span> <span class="token number">236</span><span class="token punctuation">;</span>
                       <span class="token keyword">let</span> strings <span class="token operator">=</span> n<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// ["2", "3", "6"]</span>
                       <span class="token keyword">let</span> ints <span class="token operator">=</span> strings<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">s</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [2, 3, 6]</span>
@@ -319,7 +319,7 @@
                 href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"
                 rel="noopener noreferrer nofollow" target="_blank"><code>reduce()</code><span class="sr-only">(opens in
                   new tab)</span></a> to accumulate the sum:</p>
-            <pre>
+            <pre class="language-php try">
                   <code class="  language-js"><span class="token keyword">function</span> <span class="token function">numberOfOnes</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
                     <span class="token keyword">return</span> n
                       <span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -344,7 +344,7 @@
 
             <p>Here are some examples:</p>
 
-            <pre>
+            <pre class="language-php try">
                   <code class="  language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">numberOfOnes</span><span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 7</span>
                     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">numberOfOnes</span><span class="token punctuation">(</span><span class="token number">236</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 154</span>
                     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">numberOfOnes</span><span class="token punctuation">(</span><span class="token number">420</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 192</span>

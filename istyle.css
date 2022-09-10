@@ -538,16 +538,18 @@ color: var(--color-secondary-text);
 }
 
 .i-container article .code-block pre .second-code{
-position: relative;
+  position: relative;
   line-height: 1.5rem;
+ }
+
+ .try{
+  text-size-adjust: 100%;
+  white-space: pre;
+  margin-left: -20%;
  }
 
 
 
-
-
-
- 
 /* styling navbar */
 .i-container nav{
 background-color: var(--color-bg);
