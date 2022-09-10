@@ -32,10 +32,10 @@ We tried our hands on recreating this site because it seemed intriguing and quit
 ## Built with
 HTML5  CSS3  JavaScript
 
-###Code editor
+## Code Editor
 VSCode
 
-##Resources
+## Resources
 * [W3schools](https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp)
 * [W3schools](https://www.w3schools.com/CSS/css_counters.asp)
 
@@ -51,4 +51,4 @@ VSCode
 |Precious Aigbiremhon| Tech8468|
 
 
-##Live Site
+## Live Site
