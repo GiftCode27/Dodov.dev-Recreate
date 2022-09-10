@@ -500,9 +500,13 @@ font-variant-ligatures: none;
  color: var(--color-code-keyword);
 }
 
+.i-container article pre  .number{
+  color: var(--color-code-constant);
+ }
+
 .i-container article code{
- color: var(--color-code-text-inline);
- font-size: 1.1rem;
+  color: var(--color-secondary-text);
+  font-size: 1.1rem;
 }
 
 .i-container article blockquote {
