@@ -358,6 +358,25 @@ body {
   color: #fff;
 } */
 
+.r-container hr{
+  color: var(--color-comment);
+  border: none;
+ }
+ 
+ .r-container hr::before{
+ content: "//";
+ margin-right: 1ch;
+ margin-bottom: 5px;
+ }
+ 
+ .r-container hr::after{
+ content: "-------------------------------------------------------------";
+ overflow-wrap: anywhere;
+ font-variant-ligatures: none;
+ margin-top: 15px;
+ }
+
+
 header .r-headercontent {
   display: flex;
   margin-bottom: 20px;

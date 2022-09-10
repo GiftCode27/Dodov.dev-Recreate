@@ -1,22 +1,32 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: "Fira Code", monospace;
     box-sizing: border-box;
+    border-radius: 0;
+    border-color: currentColor;
 }
 
 body {
     background-color: rgb(30, 31, 28);
     padding: 400px;
     padding-top: 40px;
+    margin: 0;
+    display: block;
+    overflow-x: hidden;
+    line-height: var(--line);
+    background: var(--color-bg);
+    color: var(--color-body-text);
 }
 
 .container {
-    width: 800px;
-    height: 6000px;
-    align-items: center;
-    background-color: rgb(39, 40, 34);
-    margin-top: 20px
+    width: 59%;
+    /* height: 6000px; */
+    /* align-items: center; */
+    background-color:var(--color-editor);
+    color: var(--color-body-text);
+    margin-top: 4.3rem;
+    padding-bottom: 43%;
 }
 ::-webkit-scrollbar {
     display: none;

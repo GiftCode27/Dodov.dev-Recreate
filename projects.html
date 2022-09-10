@@ -16,11 +16,10 @@
         <div class="navbar">
             <a href="index.html">home</a>
             <a href="blog.html">blog</a>
-            <a href="projects.html">projects</a>
-         </div>
-         </nav>
+            <a href="projects.html" class="projects isactive">projects</a>
+        </div>
+        </nav>
         <div class="c-container">
-
            <header>
                 <div class="c-focus">
                      <h1>Projects</h1>
@@ -29,7 +28,6 @@
                 <div class="c-focus2">
                        <p>My life's primary source of focus</p>
                 </div>
-              
             </header>
 
           <main>
@@ -147,13 +145,37 @@
               
           </main>
      </div>
-     <script>
-      const setTheme = theme => document.documentElement.className = theme;
+    
+    
+<script>
 
-      document.getElementById('theme').addEventListener('change', function() {
+    const setTheme = (theme) => {
+        localStorage.setItem("theme", theme)
+        document.documentElement.className = theme
+    };
+    
+    window.onload = (event) => {
+        const theme= localStorage.getItem('theme')
+        if (theme) {
+            setTheme(theme)
+            document.getElementById('theme').value =theme
+            return
+        }
+        setTheme('monokai')
+      console.log('page is fully loaded');
+    };
+    
+    // const getTheme = () => {
+    //             const theme = localStorage.getItem('theme');
+    //             theme && setTheme(theme);
+    //         }
+     
+    //     getTheme();
+    
+    document.getElementById("theme").addEventListener("change", function () {
       setTheme(this.value);
-      });
-
-     </script>
+    });
+    
+    </script>
   </body>
 </html>
