@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link id="favicon" href="https://dodov.dev/media/site/d0298ef0fd-1614418428/favicon-monokai.png" rel="icon"
-    type="image/png" />
-  <title>NUMBER OF ONES</title>
-  <link rel="stylesheet" href="istyle.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet" />
-</head>
-
-<body>
-  <div class="i-background">
-    <div class="i-container">
-      <nav>
-        <div class="navbar">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="favicon" href="https://dodov.dev/media/site/d0298ef0fd-1614418428/favicon-monokai.png" rel="icon"
+      type="image/png">
+    <title>Number of Ones</title>
+    <link rel="stylesheet" href="istyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <nav style="margin-left:-19.3rem;">
+      <div class="navbar">
           <a href="index.html">home</a>
           <a href="blog.html">blog</a>
           <a href="fix.html" class="isactive">
@@ -412,23 +408,35 @@
     </div>
   </div>
 
-  <script>
-    const setTheme = (theme) => (document.documentElement.className = theme);
+    <script>
 
-    document.getElementById("theme").addEventListener("change", function () {
-      setTheme(this.value);
-    });
-
-    //  making the cancel sign work
-
-    document
-      .getElementsByClassName("close")[0]
-      .addEventListener("click", closeBox);
-
-    function closeBox() {
-      document.getElementsByClassName("fix")[0].style.display = "none";
-    }
-  </script>
-</body>
-
+      const setTheme = (theme) => {
+          localStorage.setItem("theme", theme)
+          document.documentElement.className = theme
+      };
+      
+      window.onload = (event) => {
+          const theme= localStorage.getItem('theme')
+          if (theme) {
+              setTheme(theme)
+              document.getElementById('theme').value =theme
+              return
+          }
+          setTheme('monokai')
+        console.log('page is fully loaded');
+      };
+      
+      // const getTheme = () => {
+      //             const theme = localStorage.getItem('theme');
+      //             theme && setTheme(theme);
+      //         }
+       
+      //     getTheme();
+      
+      document.getElementById("theme").addEventListener("change", function () {
+        setTheme(this.value);
+      });
+      
+      </script>
+  </body>
 </html>
