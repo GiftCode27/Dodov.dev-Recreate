@@ -8,9 +8,8 @@ Below is a screenshot of the site:
 ## Table of Contents
 
 - [About](#about)
-- [Contributions guidelines](#contributions guidelines)
-- [Built with](#built with)
-- [Resources](#resources)
+- [Contributions](#contributions)
+- [Built with](#built)
 - [Contributors](#contributing)
 - [Live site](#livesite)
 
