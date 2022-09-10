@@ -472,7 +472,7 @@ margin-right: 1ch;
 }
 
 .i-container hr::after{
-content: "--------------------------------------------------------";
+content: "-------------------------------------------------";
 overflow-wrap: anywhere;
 font-variant-ligatures: none;
 }
