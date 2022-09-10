@@ -40,8 +40,7 @@
 
 }
 
- 
- *{
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -270,7 +269,7 @@ body {
   margin: 0 auto;
   background-color: var(--color-editor);
   width: 60%;
-  margin-top: 80px;
+  /* margin-top: 80px; */
   justify-content: center;
   align-items: center;
   padding: 70px;
@@ -286,7 +285,7 @@ main {
 .i-text1{
  flex: 70%;
  padding-right: 10px;
- color: #cfcfc2;
+ color: var(--color-body-text);
  font-size: 1.45em;
  margin-bottom: 20px;
 }
@@ -298,7 +297,7 @@ main {
  .i-text2{
   flex: 70%;
   padding-right: 10px;
-  color: #cfcfc2;
+  color: var(--color-secondary-text);
   font-size: 1.20em;
   margin-bottom: 20px;
  }
@@ -343,12 +342,12 @@ a {
 
 .isub-container-right .icontent {
   font-size: 1.11em;
-  color: #cfcfc2;
+  color: var(--color-body-text);
 }
 
 .isub-container-right .idate {
   font-size: 0.9em;
-  color: #cfcfc2;
+  color: var(--color-secondary-text);
   margin-top: 30px;
 }
 
@@ -422,7 +421,7 @@ a {
   .i-text0{
     flex: 70%;
     padding-right: 10px;
-    color: #cfcfc2;
+    color: var(--color-secondary-text);
     font-size: 1.20em;
     margin-bottom: 30px;
     margin-top: 30px;
@@ -483,7 +482,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: -19.6rem;
+    margin-left: -27.4rem;
     margin-top: 4rem;
 }
  .navbar {
@@ -494,6 +493,10 @@ a {
   outline-offset: -1px;
   width: fit-content;
   
+}
+
+nav .active{
+  background-color: var(--color-editor);
 }
 nav a {
   font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, system-ui,

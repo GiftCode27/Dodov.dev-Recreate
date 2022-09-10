@@ -9,7 +9,7 @@ body{
    background-color: var(--color-bg);
    color: var(--color-body-text);
    width: 100%;
-   margin: 0;
+   margin-top: 4rem;
    display: block;
   line-height: inherit;
   overflow-x: hidden;
@@ -17,7 +17,9 @@ body{
   color: var(--color-body-text);
 }
 
-
+.cache-container{
+  padding-bottom: 70%;
+}
 
 
 .g-container{
@@ -644,6 +646,9 @@ text-align: center;
     background-color: var(--color-bg);
     font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, system-ui, Ubuntu, sans-serif;
     overflow: auto;
+    margin-left: -3.75rem;
+    margin-top: -2.5rem;
+    width: 100%;
     }
     .cache-container .navbar {
       background-color: var(--color-tab);
@@ -664,7 +669,7 @@ text-align: center;
       min-width: 7.5rem;
       padding-top: .255em;
       padding-bottom: .255em;
-      padding-right: 2.32em;
+      padding-right: .12em;
       padding-left: .925em;
       border-right: 1px solid var(--color-bg);
       display: flex;
