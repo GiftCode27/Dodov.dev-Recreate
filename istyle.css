@@ -472,7 +472,7 @@ margin-right: 1ch;
 }
 
 .i-container hr::after{
-content: "--------------------------------------------------------";
+content: "-------------------------------------------------";
 overflow-wrap: anywhere;
 font-variant-ligatures: none;
 }
@@ -545,7 +545,7 @@ color: var(--color-secondary-text);
  .try{
   text-size-adjust: 100%;
   white-space: pre;
-  margin-left: -20%;
+  margin-left: -40%;
  }
 
 
